@@ -35,26 +35,30 @@
     <header id="header" class="header d-flex align-items-center fixed-top">
         <div
             class="header-container container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
-            <a href="" class="logo d-flex align-items-center me-auto me-xl-0">
+            <a href="/" class="logo d-flex align-items-center me-auto me-xl-0">
                 <img src="{{ asset('img/logo.png') }}" class="me-3" alt="Logo Meranti">
                 <h1 class="sitename">SI-HIBAH</h1>
             </a>
 
             <nav id="navmenu" class="navmenu">
                 <ul>
-                    <li><a href="#hero" class="active">Beranda</a></li>
-                    <li><a href="#about">Tentang Kami</a></li>
-                    <li><a href="#features">Keunggulan</a></li>
-                    <li><a href="#features-cards">Alur</a></li>
-                    <li><a href="#services">Kategori</a></li>
-                    <li><a href="#contact">Kontak</a></li>
+                    @php
+                        $isAuthPage = request()->is('login') || request()->is('register');
+                    @endphp
+
+                    <li><a href="{{ $isAuthPage ? url('/') : '#hero' }}">Beranda</a></li>
+                    <li><a href="{{ $isAuthPage ? url('/') : '#about' }}">Tentang Kami</a></li>
+                    <li><a href="{{ $isAuthPage ? url('/') : '#features' }}">Keunggulan</a></li>
+                    <li><a href="{{ $isAuthPage ? url('/') : '#features-cards' }}">Alur</a></li>
+                    <li><a href="{{ $isAuthPage ? url('/') : '#services' }}">Kategori</a></li>
+                    <li><a href="{{ $isAuthPage ? url('/') : '#contact' }}">Kontak</a></li>
                 </ul>
                 <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
             </nav>
 
             <div class="d-flex">
-                <a class="btn-getstarted" href="/login">Masuk</a>
-                <a class="btn-getstarted" href="/register">Daftar</a>
+                <a class="btn-getstarted" href="{{ route('login.form') }}">Masuk</a>
+                <a class="btn-getstarted" href="{{ route('register.form') }}">Daftar</a>
             </div>
         </div>
     </header>
@@ -65,7 +69,7 @@
         <div class="container footer-top">
             <div class="row gy-4">
                 <div class="col-lg-4 col-md-6 footer-about">
-                    <a href="" class="logo d-flex align-items-center">
+                    <a href="/" class="logo d-flex align-items-center">
                         <span class="sitename">SI-HIBAH</span>
                     </a>
                     <div class="footer-contact pt-3">

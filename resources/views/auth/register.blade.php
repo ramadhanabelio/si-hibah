@@ -3,19 +3,19 @@
 @section('title', 'Daftar')
 
 @section('content')
-    <br><br><br><br><br>
-    <main class="main mb-5">
+    <br><br>
+    <main class="main pt-5 mt-4 mb-5">
         <div class="container d-flex justify-content-center align-items-center min-vh-100">
-            <div class="col-md-8">
+            <div class="col-md-7">
                 <div class="card shadow p-4 border-0 auth-form">
                     <h2 class="text-center mb-3">Daftar</h2>
-                    <p class="text-center mb-1">
+                    <p class="text-center mb-3">
                         <a href="#" class="info-link">
-                            Formulir yang disediakan dan menggunakan akun email untuk melakukan pengajuan dana hibah di
-                            website
+                            Formulir yang disediakan dan menggunakan akun email <br>
+                            untuk melakukan pengajuan dana hibah di website
                         </a>
                     </p>
-                    <form action="" method="POST">
+                    <form action="{{ route('register') }}" method="POST">
                         @csrf
                         <div class="mb-3 text-start">
                             <label for="name" class="form-label">Nama Lembaga Organisasi Pemohon</label>
@@ -50,7 +50,7 @@
                         </div>
                     </form>
                     <p class="text-center">
-                        <a href="/login" class="info-link pt-3">
+                        <a href="{{ route('login.form') }}" class="info-link pt-3">
                             Sudah punya akun klik <span class="fw-bold">Masuk</span>
                         </a>
                     </p>
