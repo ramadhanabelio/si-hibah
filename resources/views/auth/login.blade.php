@@ -9,10 +9,10 @@
                 <div class="card shadow-lg p-4 border-0 auth-form">
                     <h2 class="text-center mb-3">Masuk</h2>
                     <p class="text-center mb-3">
-                        <a href="#" class="info-link">
+                        <span class="info-link">
                             Masuk menggunakan akun email <br>
                             untuk melakukan pengajuan dana hibah di website
-                        </a>
+                        </span>
                     </p>
                     <form action="{{ route('login') }}" method="POST">
                         @csrf

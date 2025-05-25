@@ -10,10 +10,10 @@
                 <div class="card shadow p-4 border-0 auth-form">
                     <h2 class="text-center mb-3">Daftar</h2>
                     <p class="text-center mb-3">
-                        <a href="#" class="info-link">
+                        <span class="info-link">
                             Formulir yang disediakan dan menggunakan akun email <br>
                             untuk melakukan pengajuan dana hibah di website
-                        </a>
+                        </span>
                     </p>
                     <form action="{{ route('register') }}" method="POST">
                         @csrf

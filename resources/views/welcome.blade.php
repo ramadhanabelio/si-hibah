@@ -38,7 +38,7 @@
 
                     <div class="col-lg-6">
                         <div class="hero-image" data-aos="zoom-out" data-aos-delay="300">
-                            <img src="{{ asset('img/logo.png') }}" alt="Logo Meranti" class="img-fluid" />
+                            <img src="{{ asset('img/logo.png') }}" alt="Lambang Meranti" class="img-fluid" />
                         </div>
                     </div>
                 </div>
@@ -485,10 +485,10 @@
                                 <i class="bi bi-activity"></i>
                             </div>
                             <div>
-                                <h3>Pembangunan Sumur Bor</h3>
-                                <p>Pembuatan sumur bor di daerah kekeringan untuk menyediakan air bersih bagi masyarakat
+                                <h3>Pembangunan Masjid</h3>
+                                <p>Pembuatan masjid di daerah kekeringan untuk menyediakan rumah ibaadah bagi masyarakat
                                 </p>
-                                <h3>Rp. 50.000.000</h3>
+                                <h3>Rp. 150.000.000</h3>
                                 <a href="" class="read-more">Selanjutnya
                                     <i class="bi bi-arrow-right"></i></a>
                             </div>
@@ -543,38 +543,6 @@
                         </div>
                     </div>
                     <!-- End Service Card -->
-
-                    <div class="col-lg-6" data-aos="fade-up" data-aos-delay="400">
-                        <div class="service-card d-flex">
-                            <div class="icon flex-shrink-0">
-                                <i class="bi bi-clipboard-data"></i>
-                            </div>
-                            <div>
-                                <h3>Pembangunan Sumur Bor</h3>
-                                <p>Pembuatan sumur bor di daerah kekeringan untuk menyediakan air bersih bagi masyarakat
-                                </p>
-                                <h3>Rp. 50.000.000</h3>
-                                <a href="" class="read-more">Selanjutnya <i class="bi bi-arrow-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End Service Card -->
-
-                    <div class="col-lg-6" data-aos="fade-up" data-aos-delay="400">
-                        <div class="service-card d-flex">
-                            <div class="icon flex-shrink-0">
-                                <i class="bi bi-clipboard-data"></i>
-                            </div>
-                            <div>
-                                <h3>Pembangunan Sumur Bor</h3>
-                                <p>Pembuatan sumur bor di daerah kekeringan untuk menyediakan air bersih bagi masyarakat
-                                </p>
-                                <h3>Rp. 50.000.000</h3>
-                                <a href="" class="read-more">Selanjutnya <i class="bi bi-arrow-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End Service Card -->
                 </div>
             </div>
         </section>
@@ -588,7 +556,7 @@
                         <div class="text-center">
                             <h3>Segera Ajukan Proposal Anda!</h3>
                             <p>Jangan lewatkan kesempatan ini! Klik tombol di bawah untuk mengajukan proposal hibah.</p>
-                            <a class="cta-btn" href="#">Ajukan Sekarang</a>
+                            <a class="cta-btn" href="{{ route('login.form') }}">Ajukan Sekarang</a>
                         </div>
                     </div>
                 </div>
@@ -658,8 +626,9 @@
                                 silakan hubungi kami melalui informasi di bawah ini.
                             </p>
 
-                            <form action="" method="post" class="php-email-form" data-aos="fade-up"
-                                data-aos-delay="200">
+                            <form action="{{ route('contact.submit') }}" method="POST" class="php-email-form"
+                                data-aos="fade-up" data-aos-delay="200">
+                                @csrf
                                 <div class="row gy-4">
                                     <div class="col-md-6">
                                         <input type="text" name="name" class="form-control" placeholder="Nama"
