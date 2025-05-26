@@ -19,18 +19,21 @@
                         @csrf
                         <div class="mb-3 text-start">
                             <label for="name" class="form-label">Nama Lembaga Organisasi Pemohon</label>
-                            <input type="text" class="form-control custom-input" id="name" name="name" required>
+                            <input type="text" class="form-control custom-input" id="name" name="name"
+                                value="{{ old('name', $user->name ?? '') }}" required>
                         </div>
 
                         <div class="mb-3 text-start">
                             <label for="email" class="form-label">Email</label>
-                            <input type="email" class="form-control custom-input" id="email" name="email" required>
+                            <input type="email" class="form-control custom-input" id="email" name="email"
+                                value="{{ old('email', $user->email ?? '') }}" required>
                         </div>
 
                         <div class="mb-3 text-start">
                             <label for="username" class="form-label">Username <span class="text-muted">(Tanpa
                                     Spasi)</span></label>
-                            <input type="text" class="form-control custom-input" id="username" name="username" required>
+                            <input type="text" class="form-control custom-input" id="username" name="username"
+                                value="{{ old('username', $user->username ?? '') }}" required>
                         </div>
 
                         <div class="mb-3 text-start">

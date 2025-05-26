@@ -18,7 +18,8 @@
                         @csrf
                         <div class="mb-3 text-start">
                             <label for="email" class="form-label">Username/Email</label>
-                            <input type="text" class="form-control custom-input" id="email" name="email" required>
+                            <input type="text" class="form-control custom-input" id="email" name="email"
+                                value="{{ old('email', $user->email ?? '') }}" required>
                         </div>
 
                         <div class="mb-3 text-start">
