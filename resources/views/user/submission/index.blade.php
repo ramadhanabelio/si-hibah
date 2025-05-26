@@ -7,19 +7,22 @@
         <div class="content">
             <div class="container-fluid">
                 <h4 class="page-title">
-                    <a href="{{ route('user.dashboard') }}">Dashboard</a> / Pendaftaran Hibah
+                    <a href="{{ route('user.dashboard') }}" class="dashboard-text">Dashboard</a> / Pendaftaran Hibah
                 </h4>
                 <div class="row">
                     <div class="col-md-12">
                         <div class="card">
                             <div class="card-header d-flex justify-content-between align-items-center">
                                 <div class="card-title mb-0">Pendaftaran Hibah</div>
-                                <a href="{{ route('user.submission.create') }}" class="btn btn-success">
+                                <a href="{{ route('user.submission.create') }}" class="btn btn-custom">
                                     Ajukan Sekarang
                                 </a>
                             </div>
                             <div class="card-body">
-                                <table class="table table-hover table-striped">
+                                @if (session('success'))
+                                    <div class="alert alert-success text-center">{{ session('success') }}</div>
+                                @endif
+                                <table class="table table-hover custom-table">
                                     <thead>
                                         <tr>
                                             <th scope="col">No.</th>

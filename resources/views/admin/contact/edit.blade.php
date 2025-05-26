@@ -7,8 +7,8 @@
         <div class="content">
             <div class="container-fluid">
                 <h4 class="page-title">
-                    <a href="{{ route('admin.dashboard') }}">Dashboard</a> / <a
-                        href="{{ route('admin.contact.index') }}">Daftar Kontak</a> / Edit Kontak
+                    <a href="{{ route('admin.dashboard') }}" class="dashboard-text">Dashboard</a> / <a
+                        href="{{ route('admin.contact.index') }}" class="dashboard-text">Daftar Kontak</a> / Edit Kontak
                 </h4>
                 <div class="row">
                     <div class="col-md-6">
@@ -54,7 +54,7 @@
                                     </div>
                                 </div>
                                 <div class="card-action">
-                                    <button type="submit" class="btn btn-success">Perbarui</button>
+                                    <button type="submit" class="btn btn-custom">Perbarui</button>
                                     <a href="{{ route('admin.contact.index') }}" class="btn btn-danger">Batal</a>
                                 </div>
                             </div>

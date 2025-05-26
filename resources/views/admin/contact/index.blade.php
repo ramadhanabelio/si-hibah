@@ -7,19 +7,22 @@
         <div class="content">
             <div class="container-fluid">
                 <h4 class="page-title">
-                    <a href="{{ route('admin.dashboard') }}">Dashboard</a> / Daftar Kontak
+                    <a href="{{ route('admin.dashboard') }}" class="dashboard-text">Dashboard</a> / Daftar Kontak
                 </h4>
                 <div class="row">
                     <div class="col-md-12">
                         <div class="card">
                             <div class="card-header d-flex justify-content-between align-items-center">
                                 <div class="card-title mb-0">Daftar Kontak</div>
-                                <a href="{{ route('admin.contact.create') }}" class="btn btn-success">
+                                <a href="{{ route('admin.contact.create') }}" class="btn btn-custom">
                                     <i class="la la-plus mr-2"></i> Tambah Data
                                 </a>
                             </div>
                             <div class="card-body">
-                                <table class="table table-hover table-striped">
+                                @if (session('success'))
+                                    <div class="alert alert-success text-center">{{ session('success') }}</div>
+                                @endif
+                                <table class="table table-hover custom-table">
                                     <thead>
                                         <tr>
                                             <th scope="col">No.</th>

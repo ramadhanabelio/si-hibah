@@ -7,8 +7,9 @@
         <div class="content">
             <div class="container-fluid">
                 <h4 class="page-title">
-                    <a href="{{ route('user.dashboard') }}">Dashboard</a> / <a
-                        href="{{ route('user.submission.index') }}">Pendaftaran Hibah</a> / Perbarui Pendaftaran Hibah
+                    <a href="{{ route('user.dashboard') }}" class="dashboard-text">Dashboard</a> / <a
+                        href="{{ route('user.submission.index') }}" class="dashboard-text">Pendaftaran Hibah</a> / Perbarui
+                    Pendaftaran Hibah
                 </h4>
                 <div class="row">
                     <div class="col-md-8">
@@ -93,7 +94,7 @@
                                     </div>
                                 </div>
                                 <div class="card-action">
-                                    <button type="submit" class="btn btn-success">Perbarui</button>
+                                    <button type="submit" class="btn btn-custom">Perbarui</button>
                                     <a href="{{ route('user.submission.index') }}" class="btn btn-danger">Batal</a>
                                 </div>
                             </div>

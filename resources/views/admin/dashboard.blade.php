@@ -10,7 +10,7 @@
                 <div class="row">
 
                     <div class="col-md-3">
-                        <a href="">
+                        <a href="{{ route('admin.validate.index') }}">
                             <div class="card card-stats card-success">
                                 <div class="card-body ">
                                     <div class="row">
@@ -32,7 +32,7 @@
                     </div>
 
                     <div class="col-md-3">
-                        <a href="">
+                        <a href="{{ route('admin.contact.index') }}">
                             <div class="card card-stats card-danger">
                                 <div class="card-body">
                                     <div class="row">

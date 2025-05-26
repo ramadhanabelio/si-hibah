@@ -7,19 +7,73 @@
         <div class="content">
             <div class="container-fluid">
                 <h4 class="page-title">
-                    <a href="{{ route('admin.dashboard') }}">Dashboard</a> / Pengajuan Dana Hibah
+                    <a href="{{ route('admin.dashboard') }}" class="dashboard-text">Dashboard</a> / Daftar Pengajuan Dana
+                    Hibah
                 </h4>
                 <div class="row">
                     <div class="col-md-12">
                         <div class="card">
                             <div class="card-header d-flex justify-content-between align-items-center">
-                                <div class="card-title mb-0">Pengajuan Dana Hibah</div>
+                                <div class="card-title mb-0">Daftar Pengajuan Dana Hibah</div>
                             </div>
                             <div class="card-body">
                                 @if (session('success'))
                                     <div class="alert alert-success text-center">{{ session('success') }}</div>
                                 @endif
-                                <table class="table table-hover table-striped">
+
+                                <form method="GET" class="mb-4">
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            <select name="subdistrict" class="form-control form-control-sm">
+                                                <option value="">Semua Kecamatan</option>
+                                                @foreach ($subdistricts as $subdistrict)
+                                                    <option value="{{ $subdistrict }}"
+                                                        {{ request('subdistrict') == $subdistrict ? 'selected' : '' }}>
+                                                        {{ $subdistrict }}
+                                                    </option>
+                                                @endforeach
+                                            </select>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <select name="type" class="form-control form-control-sm">
+                                                <option value="">Semua Jenis</option>
+                                                @foreach ($types as $type)
+                                                    <option value="{{ $type }}"
+                                                        {{ request('type') == $type ? 'selected' : '' }}>
+                                                        {{ $type }}
+                                                    </option>
+                                                @endforeach
+                                            </select>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <select name="status" class="form-control form-control-sm">
+                                                <option value="">Semua Status</option>
+                                                @foreach ($statuses as $status)
+                                                    <option value="{{ $status }}"
+                                                        {{ request('status') == $status ? 'selected' : '' }}>
+                                                        {{ ucfirst($status) }}
+                                                    </option>
+                                                @endforeach
+                                            </select>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <select name="year_submission" class="form-control form-control-sm">
+                                                <option value="">Semua Tahun</option>
+                                                @foreach ($years as $year)
+                                                    <option value="{{ $year }}"
+                                                        {{ request('year_submission') == $year ? 'selected' : '' }}>
+                                                        {{ $year }}
+                                                    </option>
+                                                @endforeach
+                                            </select>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <button type="submit" class="btn btn-custom btn-block btn-sm">Filter</button>
+                                        </div>
+                                    </div>
+                                </form>
+
+                                <table class="table table-hover custom-table">
                                     <thead>
                                         <tr>
                                             <th scope="col">No.</th>
