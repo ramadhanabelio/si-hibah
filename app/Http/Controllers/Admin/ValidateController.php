@@ -38,6 +38,11 @@ class ValidateController extends Controller
         return view('admin.validate.index', compact('validates', 'subdistricts', 'types', 'statuses', 'years'));
     }
 
+    public function show(Submission $submission)
+    {
+        return view('admin.validate.show', compact('submission'));
+    }
+
     public function accept(Submission $submission)
     {
         $submission->update(['status' => 'diterima']);

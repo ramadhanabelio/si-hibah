@@ -15,6 +15,11 @@ class SubmissionController extends Controller
         return view('user.submission.index', compact('submissions'));
     }
 
+    public function show(Submission $submission)
+    {
+        return view('user.submission.detail', compact('submission'));
+    }
+
     public function create()
     {
         return view('user.submission.create');

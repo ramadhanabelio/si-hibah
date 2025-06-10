@@ -134,7 +134,11 @@
                                                                 onclick="return confirm('Tolak pengajuan ini?')">Tolak</button>
                                                         </form>
                                                     @else
-                                                        <span class="text-muted">-</span>
+                                                        {{-- <span class="text-muted">-</span> --}}
+                                                        <a href="{{ route('admin.validate.show', $validate->id) }}"
+                                                            class="badge badge-warning">
+                                                            Detail
+                                                        </a>
                                                     @endif
                                                 </td>
                                             </tr>

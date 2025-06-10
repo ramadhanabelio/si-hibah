@@ -31,6 +31,7 @@
                                             <th scope="col">Kecamatan</th>
                                             <th scope="col">Tahun</th>
                                             <th scope="col">Status</th>
+                                            <th scope="col">Riwayat</th>
                                             <th scope="col">File Proposal</th>
                                             <th scope="col">Aksi</th>
                                         </tr>
@@ -54,6 +55,12 @@
                                                         <span
                                                             class="badge badge-secondary">{{ ucfirst($submission->status) }}</span>
                                                     @endif
+                                                </td>
+                                                <td>
+                                                    <a href="{{ route('user.submission.show', $submission->id) }}"
+                                                        class="badge badge-success" style="cursor:pointer;">
+                                                        Lihat Riwayat
+                                                    </a>
                                                 </td>
                                                 <td>
                                                     @if ($submission->proposal)

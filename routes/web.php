@@ -40,6 +40,7 @@ Route::middleware(['auth'])->prefix('user')->name('user.')->group(function () {
 Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () {
     Route::get('dashboard', [AdminDashboardController::class, 'index'])->name('dashboard');
     Route::resource('validate', ValidateController::class);
+    Route::get('validate/{submission}/detail', [ValidateController::class, 'show'])->name('validate.show');
     Route::patch('validate/{submission}/accept', [ValidateController::class, 'accept'])->name('validate.accept');
     Route::patch('validate/{submission}/reject', [ValidateController::class, 'reject'])->name('validate.reject');
     Route::resource('contact', AdminContactController::class);
