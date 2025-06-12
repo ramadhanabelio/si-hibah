@@ -57,15 +57,15 @@
                                 <li>
                                     <div class="notif-center">
                                         @forelse ($notifications as $notif)
-                                            <a href="#" class="notif-item" data-id="{{ $notif->id }}">
-                                                <div class="notif-icon notif-primary">
-                                                    <i class="la la-bell"></i>
-                                                </div>
-                                                <div class="notif-content">
+                                            <a href="#" class="notif-item d-flex align-items-start"
+                                                data-id="{{ $notif->id }}">
+                                                <div class="notif-content flex-grow-1 d-flex flex-column">
                                                     <span class="block">{{ $notif->title }}</span>
-                                                    <span
-                                                        class="time">{{ $notif->created_at->diffForHumans() }}</span>
+                                                    <span class="text-muted time">{{ $notif->message }}</span>
                                                 </div>
+                                                <small class="text-muted time align-self-start">
+                                                    {{ $notif->created_at->diffForHumans() }}
+                                                </small>
                                             </a>
                                         @empty
                                             <p class="text-center text-muted p-2">Tidak ada notifikasi</p>
