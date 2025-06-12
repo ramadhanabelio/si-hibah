@@ -1,81 +1,100 @@
-## 🛠️ Project Installation Guide
+## 🧰 Prerequisites
 
-Following are the steps to install a Laravel project:
+Before you begin, ensure your system has the following installed:
 
-### Prerequisites
+-   PHP 8.1 or higher
+-   [Composer](https://getcomposer.org/)
+-   MySQL or compatible database system
+-   Git
+-   A local web server (e.g., Apache, Nginx) or Laravel Sail (optional)
 
-Make sure you have [Composer](https://getcomposer.org/) installed on your system before starting the installation.
+---
 
-### Steps
+## 🚀 Installation Steps
 
-**1.** Clone your Laravel project repository into a local directory:
+Follow these steps to get the Laravel project up and running:
+
+### 1. Clone the Repository
 
 ```bash
 git clone https://github.com/ramadhanabelio/si-hibah.git
-```
-
-**2.** Go to the project directory:
-
-```bash
 cd si-hibah
 ```
 
-**3.** Install PHP dependencies using composer:
+### 2. Install PHP Dependencies
 
 ```bash
 composer install
 ```
 
-**4.** Rename the .env.example file to .env. This is the Laravel configuration file:
+### 3. Set Up the Environment File
+
+Copy the example environment file and adjust it as needed:
 
 ```bash
 cp .env.example .env
 ```
 
-**5.** Create a database with a name according to your project, for example "si_hibah", and configure the .env file to set the database name:
+Then, update the following lines in `.env` to match your local database configuration:
 
-Open the .env file using a text editor and find the following line:
-
-```bash
-DB_DATABASE=laravel
-```
-
-Replace database_name with the name you used for the database. For example:
-
-```bash
+```env
 DB_DATABASE=si_hibah
+DB_USERNAME=root
+DB_PASSWORD=your_password
 ```
 
-**6.** Generate application key:
+### 4. Generate the Application Key
 
 ```bash
 php artisan key:generate
 ```
 
-**7.** Create and migrate database:
+### 5. Run Migrations
+
+Create the database tables:
 
 ```bash
 php artisan migrate
 ```
 
-To enter admin data, run the following seeding command:
+### 6. Seed the Database (Optional)
+
+If you want to populate the database with initial data (e.g., admin account):
 
 ```bash
 php artisan db:seed
 ```
 
-This command will run the seeder you created to populate initial data, such as admin accounts, into the database.
+📌 **Default Admin Account** (if available via seeder):
 
-**8.** Create storage folder:
+-   **Email**: `admin@sihibah.com`
+-   **Password**: `12345678`
+
+### 7. Create Storage Symlink
 
 ```bash
 php artisan storage:link
 ```
 
-**9.** Run the Laravel development server:
+### 8. Start the Development Server
 
 ```bash
 php artisan serve
 ```
 
-After following the steps above, your Laravel project is now ready to use and can be accessed via the browser at http://localhost:8000.
+Visit your application at [http://localhost:8000](http://localhost:8000)
+
+---
+
+## 📬 Contact
+
+If you encounter any issues or have questions, feel free to:
+
+-   Open an issue on [GitHub](https://github.com/ramadhanabelio/si-hibah/issues)
+-   Contact the maintainer: **ramadhanabelionusaputra@gmail.com**
+
+---
+
+## 📄 License
+
+This project is open-source and available under the [MIT License](LICENSE).
