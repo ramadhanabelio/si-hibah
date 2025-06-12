@@ -37,7 +37,19 @@
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="type">Jenis Hibah</label>
+                                        <label for="name_manager">Nama Pengurus</label>
+                                        <input type="text" name="name_manager" class="form-control" id="name_manager"
+                                            value="{{ old('name_manager', $submission->name_manager) }}" required>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="category">Kategori Hibah</label>
+                                        <input type="text" name="category" class="form-control" id="category"
+                                            value="{{ old('category', $submission->category) }}" required>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="type">Jenis Pendanaan</label>
                                         <input type="text" name="type" class="form-control" id="type"
                                             value="{{ old('type', $submission->type) }}" required>
                                     </div>
@@ -63,6 +75,12 @@
                                     </div>
 
                                     <div class="form-group">
+                                        <label for="ward_village">Kelurahan/Desa</label>
+                                        <input type="text" name="ward_village" class="form-control" id="ward_village"
+                                            value="{{ old('ward_village', $submission->ward_village) }}" required>
+                                    </div>
+
+                                    <div class="form-group">
                                         <label for="address">Alamat Lengkap</label>
                                         <textarea name="address" class="form-control" id="address" rows="3" required>{{ old('address', $submission->address) }}</textarea>
                                     </div>
@@ -79,6 +97,46 @@
                                         @if ($submission->proposal)
                                             <a href="{{ asset('storage/' . $submission->proposal) }}" target="_blank"
                                                 class="badge badge-info mt-2">Lihat Proposal Lama</a>
+                                        @endif
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="deed_of_establishment">Upload Akta Pendirian</label>
+                                        <input type="file" name="deed_of_establishment" class="form-control-file"
+                                            id="deed_of_establishment">
+                                        @if ($submission->deed_of_establishment)
+                                            <a href="{{ asset('storage/' . $submission->deed_of_establishment) }}"
+                                                target="_blank" class="badge badge-info mt-2">Lihat Akta Pendirian
+                                                Lama</a>
+                                        @endif
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="npwp">Upload NPWP</label>
+                                        <input type="file" name="npwp" class="form-control-file" id="npwp">
+                                        @if ($submission->npwp)
+                                            <a href="{{ asset('storage/' . $submission->npwp) }}" target="_blank"
+                                                class="badge badge-info mt-2">Lihat NPWP Lama</a>
+                                        @endif
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="account_book">Upload Buku Rekening</label>
+                                        <input type="file" name="account_book" class="form-control-file"
+                                            id="account_book">
+                                        @if ($submission->account_book)
+                                            <a href="{{ asset('storage/' . $submission->account_book) }}" target="_blank"
+                                                class="badge badge-info mt-2">Lihat Buku Rekening Lama</a>
+                                        @endif
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="rab_renovation">Upload RAB Renovasi</label>
+                                        <input type="file" name="rab_renovation" class="form-control-file"
+                                            id="rab_renovation">
+                                        @if ($submission->rab_renovation)
+                                            <a href="{{ asset('storage/' . $submission->rab_renovation) }}"
+                                                target="_blank" class="badge badge-info mt-2">Lihat RAB Renovasi Lama</a>
                                         @endif
                                     </div>
 

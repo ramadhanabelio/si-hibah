@@ -26,13 +26,16 @@
                                     <thead>
                                         <tr>
                                             <th scope="col">No.</th>
+                                            <th scope="col">Kategori Hibah</th>
                                             <th scope="col">Masjid/Mushola</th>
-                                            <th scope="col">Jenis Hibah</th>
                                             <th scope="col">Kecamatan</th>
+                                            <th scope="col">Kelurahan</th>
                                             <th scope="col">Tahun</th>
+                                            <th scope="col">Jenis Pendanaan</th>
                                             <th scope="col">Status</th>
                                             <th scope="col">Riwayat</th>
                                             <th scope="col">File Proposal</th>
+                                            <th scope="col">Detail</th>
                                             <th scope="col">Aksi</th>
                                         </tr>
                                     </thead>
@@ -40,10 +43,12 @@
                                         @forelse($submissions as $index => $submission)
                                             <tr>
                                                 <td>{{ $loop->iteration }}.</td>
+                                                <td>{{ $submission->category }}</td>
                                                 <td>{{ $submission->name_institution }}</td>
-                                                <td>{{ $submission->type }}</td>
                                                 <td>{{ $submission->subdistrict }}</td>
+                                                <td>{{ $submission->ward_village }}</td>
                                                 <td>{{ $submission->year_submission }}</td>
+                                                <td>{{ $submission->type }}</td>
                                                 <td>
                                                     @if ($submission->status === 'diproses')
                                                         <span class="badge badge-warning">Diproses</span>
@@ -57,7 +62,7 @@
                                                     @endif
                                                 </td>
                                                 <td>
-                                                    <a href="{{ route('user.submission.show', $submission->id) }}"
+                                                    <a href="{{ route('user.submission.history', $submission->id) }}"
                                                         class="badge badge-success" style="cursor:pointer;">
                                                         Lihat Riwayat
                                                     </a>
@@ -71,6 +76,12 @@
                                                     @else
                                                         <span class="text-muted">Belum ada</span>
                                                     @endif
+                                                </td>
+                                                <td>
+                                                    <a href="{{ route('user.submission.show', $submission->id) }}"
+                                                        class="badge badge-warning" style="cursor:pointer;">
+                                                        Cek Validasi
+                                                    </a>
                                                 </td>
                                                 <td>
                                                     @if ($submission->status !== 'diterima')
@@ -90,7 +101,7 @@
                                             </tr>
                                         @empty
                                             <tr>
-                                                <td colspan="8" class="text-center">Belum ada data pendaftaran.</td>
+                                                <td colspan="9" class="text-center">Belum ada data pendaftaran.</td>
                                             </tr>
                                         @endforelse
                                     </tbody>

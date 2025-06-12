@@ -20,9 +20,11 @@ class ValidateController extends Controller
             $query->where('type', $request->type);
         }
 
-        if ($request->filled('status')) {
-            $query->where('status', $request->status);
-        }
+        // if ($request->filled('status')) {
+        //     $query->where('status', $request->status);
+        // } else {
+        //     $query->where('status', 'diproses');
+        // }
 
         if ($request->filled('year_submission')) {
             $query->where('year_submission', $request->year_submission);
@@ -32,7 +34,7 @@ class ValidateController extends Controller
 
         $subdistricts = Submission::select('subdistrict')->distinct()->pluck('subdistrict');
         $types = Submission::select('type')->distinct()->pluck('type');
-        $statuses = ['diproses', 'diterima', 'ditolak'];
+        $statuses = ['diproses', 'diterima', 'ditolak', 'direvisi'];
         $years = Submission::select('year_submission')->distinct()->pluck('year_submission');
 
         return view('admin.validate.index', compact('validates', 'subdistricts', 'types', 'statuses', 'years'));
@@ -53,5 +55,19 @@ class ValidateController extends Controller
     {
         $submission->update(['status' => 'ditolak']);
         return redirect()->route('admin.validate.index')->with('success', 'Pengajuan berhasil ditolak.');
+    }
+
+    public function revise(Request $request, Submission $submission)
+    {
+        $request->validate([
+            'note' => 'required|string|max:500',
+        ]);
+
+        $submission->update([
+            'status' => 'direvisi',
+            'note' => $request->note,
+        ]);
+
+        return redirect()->route('admin.validate.index')->with('success', 'Pengajuan berhasil direvisi.');
     }
 }

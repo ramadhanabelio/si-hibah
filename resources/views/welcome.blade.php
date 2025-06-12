@@ -6,7 +6,7 @@
         <section id="hero" class="hero section">
             <div class="container" data-aos="fade-up" data-aos-delay="100">
                 <div class="row align-items-center">
-                    <div class="col-lg-6">
+                    <div class="col-lg-7">
                         <div class="hero-content" data-aos="fade-up" data-aos-delay="200">
                             <div class="company-badge mb-4">
                                 <i class="bi bi-gear-fill me-2"></i>
@@ -14,14 +14,14 @@
                             </div>
 
                             <h1 class="mb-4">
-                                Sistem Informasi <br />
-                                <span class="accent-text">Dana Hibah</span>
+                                Program Pengajuan Hibah <br />
+                                <span class="accent-text">Kabupaten Kepulauan Meranti</span>
                             </h1>
 
                             <p class="mb-3 mb-md-5">
-                                Sistem Informasi Dana Hibah membantu pengelolaan pengajuan, verifikasi, dan pencairan
-                                dana secara efisien.
-                                Platform ini mempermudah lembaga atau individu dalam memantau status permohonan serta
+                                Sistem Informasi Dana Hibah membantu berbasis web pengelolaan pengajuan, verifikasi, dan
+                                pencairan dana hibah secara efisien di Kabupaten Kepulauan Meranti. Platform ini mempermudah
+                                lembaga atau individu dalam memantau status permohonan serta
                                 transparansi penggunaan anggaran.
                             </p>
 
@@ -36,7 +36,7 @@
                         </div>
                     </div>
 
-                    <div class="col-lg-6">
+                    <div class="col-lg-5">
                         <div class="hero-image" data-aos="zoom-out" data-aos-delay="300">
                             <img src="{{ asset('img/logo.png') }}" alt="Lambang Meranti" class="img-fluid" />
                         </div>

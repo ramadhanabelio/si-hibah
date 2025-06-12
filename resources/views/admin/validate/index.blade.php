@@ -77,10 +77,12 @@
                                     <thead>
                                         <tr>
                                             <th scope="col">No.</th>
+                                            <th scope="col">Kategori Hibah</th>
                                             <th scope="col">Masjid/Mushola</th>
-                                            <th scope="col">Jenis Hibah</th>
                                             <th scope="col">Kecamatan</th>
+                                            <th scope="col">Kelurahan</th>
                                             <th scope="col">Tahun</th>
+                                            <th scope="col">Jenis Pendanaan</th>
                                             <th scope="col">Status</th>
                                             <th scope="col">File Proposal</th>
                                             <th scope="col">Aksi</th>
@@ -90,10 +92,12 @@
                                         @forelse($validates as $index => $validate)
                                             <tr>
                                                 <td>{{ $loop->iteration }}.</td>
+                                                <td>{{ $validate->category }}</td>
                                                 <td>{{ $validate->name_institution }}</td>
-                                                <td>{{ $validate->type }}</td>
                                                 <td>{{ $validate->subdistrict }}</td>
+                                                <td>{{ $validate->ward_village }}</td>
                                                 <td>{{ $validate->year_submission }}</td>
+                                                <td>{{ $validate->type }}</td>
                                                 <td>
                                                     @if ($validate->status === 'diproses')
                                                         <span class="badge badge-warning">Diproses</span>
@@ -117,34 +121,15 @@
                                                     @endif
                                                 </td>
                                                 <td>
-                                                    @if ($validate->status === 'diproses')
-                                                        <form action="{{ route('admin.validate.accept', $validate->id) }}"
-                                                            method="POST" style="display:inline-block;">
-                                                            @csrf
-                                                            @method('PATCH')
-                                                            <button type="submit" class="btn btn-sm btn-success"
-                                                                onclick="return confirm('Terima pengajuan ini?')">Terima</button>
-                                                        </form>
-
-                                                        <form action="{{ route('admin.validate.reject', $validate->id) }}"
-                                                            method="POST" style="display:inline-block;">
-                                                            @csrf
-                                                            @method('PATCH')
-                                                            <button type="submit" class="btn btn-sm btn-danger"
-                                                                onclick="return confirm('Tolak pengajuan ini?')">Tolak</button>
-                                                        </form>
-                                                    @else
-                                                        {{-- <span class="text-muted">-</span> --}}
-                                                        <a href="{{ route('admin.validate.show', $validate->id) }}"
-                                                            class="badge badge-warning">
-                                                            Detail
-                                                        </a>
-                                                    @endif
+                                                    <a href="{{ route('admin.validate.show', $validate->id) }}"
+                                                        class="badge badge-warning">
+                                                        Detail
+                                                    </a>
                                                 </td>
                                             </tr>
                                         @empty
                                             <tr>
-                                                <td colspan="8" class="text-center">Belum ada data pengajuan.</td>
+                                                <td colspan="10" class="text-center">Belum ada data pengajuan.</td>
                                             </tr>
                                         @endforelse
                                     </tbody>

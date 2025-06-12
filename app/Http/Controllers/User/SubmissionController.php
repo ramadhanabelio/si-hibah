@@ -5,6 +5,7 @@ namespace App\Http\Controllers\User;
 use App\Models\Submission;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 
 class SubmissionController extends Controller
@@ -17,7 +18,12 @@ class SubmissionController extends Controller
 
     public function show(Submission $submission)
     {
-        return view('user.submission.detail', compact('submission'));
+        return view('user.submission.show', compact('submission'));
+    }
+
+    public function history(Submission $submission)
+    {
+        return view('user.submission.history', compact('submission'));
     }
 
     public function create()
@@ -30,29 +36,56 @@ class SubmissionController extends Controller
         $request->validate([
             'title' => 'required|string|max:255',
             'name_institution' => 'required|string|max:255',
+            'name_manager' => 'required|string|max:255',
+            'category' => 'required|string|max:100',
             'type' => 'required|string|max:100',
             'date_submission' => 'required|date',
             'year_submission' => 'required|digits:4|integer',
             'subdistrict' => 'required|string|max:100',
+            'ward_village' => 'required|string|max:100',
             'address' => 'required|string|max:255',
             'grand_total' => 'required|numeric',
+
             'proposal' => 'required|mimes:pdf,doc,docx|max:2048',
+            'deed_of_establishment' => 'required|mimes:pdf,doc,docx|max:2048',
+            'npwp' => 'required|mimes:pdf,jpeg,png,jpg|max:2048',
+            'account_book' => 'required|mimes:pdf,jpeg,png,jpg|max:2048',
+            'rab_renovation' => 'required|mimes:pdf,doc,docx,xls,xlsx|max:2048',
             'photo' => 'nullable|image|mimes:jpeg,png,jpg|max:2048',
+        ], [
+            'proposal.max' => 'File Proposal terlalu besar. Maksimal ukuran adalah 2MB.',
+            'deed_of_establishment.max' => 'File Akta Pendirian terlalu besar. Maksimal ukuran adalah 2MB.',
+            'npwp.max' => 'File NPWP terlalu besar. Maksimal ukuran adalah 2MB.',
+            'account_book.max' => 'File Buku Rekening terlalu besar. Maksimal ukuran adalah 2MB.',
+            'rab_renovation.max' => 'File RAB Renovasi terlalu besar. Maksimal ukuran adalah 2MB.',
+            'photo.max' => 'File Foto terlalu besar. Maksimal ukuran adalah 2MB.',
         ]);
 
-        $proposalPath = $request->file('proposal')->store('proposals', 'public');
+        $proposalPath = $request->file('proposal')->store('proposal', 'public');
+        $deedPath = $request->file('deed_of_establishment')->store('akta_pendirian', 'public');
+        $npwpPath = $request->file('npwp')->store('npwp', 'public');
+        $accountBookPath = $request->file('account_book')->store('buku_rekening', 'public');
+        $rabPath = $request->file('rab_renovation')->store('rab', 'public');
         $photoPath = $request->file('photo') ? $request->file('photo')->store('photos', 'public') : null;
 
         Submission::create([
+            'user_id' => Auth::id(),
             'title' => $request->title,
             'name_institution' => $request->name_institution,
+            'name_manager' => $request->name_manager,
+            'category' => $request->category,
             'type' => $request->type,
             'date_submission' => $request->date_submission,
             'year_submission' => $request->year_submission,
             'subdistrict' => $request->subdistrict,
+            'ward_village' => $request->ward_village,
             'address' => $request->address,
             'grand_total' => $request->grand_total,
             'proposal' => $proposalPath,
+            'deed_of_establishment' => $deedPath,
+            'npwp' => $npwpPath,
+            'account_book' => $accountBookPath,
+            'rab_renovation' => $rabPath,
             'photo' => $photoPath,
             'status' => 'diproses',
         ]);
@@ -70,19 +103,54 @@ class SubmissionController extends Controller
         $request->validate([
             'title' => 'required|string|max:255',
             'name_institution' => 'required|string|max:255',
+            'name_manager' => 'required|string|max:255',
+            'category' => 'required|string|max:100',
             'type' => 'required|string|max:100',
             'date_submission' => 'required|date',
-            'year_submission' => 'required|digits:4|integer',
+            'year_submission' => 'required|digits:4|integer|min:2024',
             'subdistrict' => 'required|string|max:100',
+            'ward_village' => 'required|string|max:100',
             'address' => 'required|string|max:255',
             'grand_total' => 'required|numeric',
+
             'proposal' => 'nullable|mimes:pdf,doc,docx|max:2048',
+            'deed_of_establishment' => 'nullable|mimes:pdf,doc,docx|max:2048',
+            'npwp' => 'nullable|mimes:pdf,jpeg,png,jpg|max:2048',
+            'account_book' => 'nullable|mimes:pdf,jpeg,png,jpg|max:2048',
+            'rab_renovation' => 'nullable|mimes:pdf,doc,docx,xls,xlsx|max:2048',
             'photo' => 'nullable|image|mimes:jpeg,png,jpg|max:2048',
+        ], [
+            'proposal.max' => 'File Proposal terlalu besar. Maksimal ukuran adalah 2MB.',
+            'deed_of_establishment.max' => 'File Akta Pendirian terlalu besar. Maksimal ukuran adalah 2MB.',
+            'npwp.max' => 'File NPWP terlalu besar. Maksimal ukuran adalah 2MB.',
+            'account_book.max' => 'File Buku Rekening terlalu besar. Maksimal ukuran adalah 2MB.',
+            'rab_renovation.max' => 'File RAB Renovasi terlalu besar. Maksimal ukuran adalah 2MB.',
+            'photo.max' => 'File Foto terlalu besar. Maksimal ukuran adalah 2MB.',
         ]);
 
         if ($request->hasFile('proposal')) {
             Storage::disk('public')->delete($submission->proposal);
-            $submission->proposal = $request->file('proposal')->store('proposals', 'public');
+            $submission->proposal = $request->file('proposal')->store('proposal', 'public');
+        }
+
+        if ($request->hasFile('deed_of_establishment')) {
+            Storage::disk('public')->delete($submission->deed_of_establishment);
+            $submission->deed_of_establishment = $request->file('akta_pendirian')->store('deeds', 'public');
+        }
+
+        if ($request->hasFile('npwp')) {
+            Storage::disk('public')->delete($submission->npwp);
+            $submission->npwp = $request->file('npwp')->store('npwp', 'public');
+        }
+
+        if ($request->hasFile('account_book')) {
+            Storage::disk('public')->delete($submission->account_book);
+            $submission->account_book = $request->file('account_book')->store('buku_rekening', 'public');
+        }
+
+        if ($request->hasFile('rab_renovation')) {
+            Storage::disk('public')->delete($submission->rab_renovation);
+            $submission->rab_renovation = $request->file('rab_renovation')->store('rab', 'public');
         }
 
         if ($request->hasFile('photo')) {
@@ -90,8 +158,19 @@ class SubmissionController extends Controller
             $submission->photo = $request->file('photo')->store('photos', 'public');
         }
 
-        $submission->update($request->except(['proposal', 'photo']) + [
+        $submission->update($request->except([
+            'proposal',
+            'deed_of_establishment',
+            'npwp',
+            'account_book',
+            'rab_renovation',
+            'photo'
+        ]) + [
             'proposal' => $submission->proposal,
+            'deed_of_establishment' => $submission->deed_of_establishment,
+            'npwp' => $submission->npwp,
+            'account_book' => $submission->account_book,
+            'rab_renovation' => $submission->rab_renovation,
             'photo' => $submission->photo,
         ]);
 
