@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers\User;
 
+use App\Models\User;
 use App\Models\Submission;
+use App\Models\Notification;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
@@ -68,7 +70,7 @@ class SubmissionController extends Controller
         $rabPath = $request->file('rab_renovation')->store('rab', 'public');
         $photoPath = $request->file('photo') ? $request->file('photo')->store('photos', 'public') : null;
 
-        Submission::create([
+        $submission = Submission::create([
             'user_id' => Auth::id(),
             'title' => $request->title,
             'name_institution' => $request->name_institution,
@@ -89,6 +91,21 @@ class SubmissionController extends Controller
             'photo' => $photoPath,
             'status' => 'diproses',
         ]);
+
+        Notification::create([
+            'user_id' => Auth::id(),
+            'title' => 'Pengajuan Baru Dikirim',
+            'message' => 'Pengajuan Anda sedang diproses, silakan tunggu beberapa saat lagi untuk validasi.',
+        ]);
+
+        $admins = User::where('role', 'admin')->get();
+        foreach ($admins as $admin) {
+            Notification::create([
+                'user_id' => $admin->id,
+                'title' => 'Permohonan Baru',
+                'message' => "{$submission->name_manager} mengajukan permohonan pada " . now()->format('d M Y'),
+            ]);
+        }
 
         return redirect()->route('user.submission.index')->with('success', 'Pendaftaran hibah berhasil diajukan.');
     }

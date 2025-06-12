@@ -101,7 +101,7 @@
                                             </tr>
                                         @empty
                                             <tr>
-                                                <td colspan="9" class="text-center">Belum ada data pendaftaran.</td>
+                                                <td colspan="12" class="text-center">Belum ada data pendaftaran.</td>
                                             </tr>
                                         @endforelse
                                     </tbody>

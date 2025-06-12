@@ -31,6 +31,49 @@
             <nav class="navbar navbar-header navbar-expand-lg">
                 <div class="container-fluid">
                     <ul class="navbar-nav topbar-nav ml-md-auto align-items-center">
+                        @php
+                            $userId = auth()->id();
+                            $notifications = \App\Models\Notification::where('user_id', $userId)
+                                ->latest()
+                                ->take(5)
+                                ->get();
+                        @endphp
+
+                        <li class="nav-item dropdown hidden-caret">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="la la-bell"></i>
+                                @php
+                                    $unread = $notifications->where('read', false)->count();
+                                @endphp
+                                @if ($unread > 0)
+                                    <span class="notification">{{ $unread }}</span>
+                                @endif
+                            </a>
+                            <ul class="dropdown-menu notif-box" aria-labelledby="navbarDropdown">
+                                <li>
+                                    <div class="dropdown-title">Terdapat {{ $unread }} notifikasi baru</div>
+                                </li>
+                                <li>
+                                    <div class="notif-center">
+                                        @forelse ($notifications as $notif)
+                                            <a href="#" class="notif-item" data-id="{{ $notif->id }}">
+                                                <div class="notif-icon notif-primary">
+                                                    <i class="la la-bell"></i>
+                                                </div>
+                                                <div class="notif-content">
+                                                    <span class="block">{{ $notif->title }}</span>
+                                                    <span
+                                                        class="time">{{ $notif->created_at->diffForHumans() }}</span>
+                                                </div>
+                                            </a>
+                                        @empty
+                                            <p class="text-center text-muted p-2">Tidak ada notifikasi</p>
+                                        @endforelse
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
                         <li class="nav-item dropdown">
                             <a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#"
                                 aria-expanded="false">

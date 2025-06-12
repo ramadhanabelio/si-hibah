@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Models\Submission;
+use App\Models\Notification;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -48,12 +49,26 @@ class ValidateController extends Controller
     public function accept(Submission $submission)
     {
         $submission->update(['status' => 'diterima']);
+
+        Notification::create([
+            'user_id' => $submission->user_id,
+            'title' => 'Pengajuan Diterima',
+            'message' => 'Pengajuan Anda sudah diterima.',
+        ]);
+
         return redirect()->route('admin.validate.index')->with('success', 'Pengajuan berhasil diterima.');
     }
 
     public function reject(Submission $submission)
     {
         $submission->update(['status' => 'ditolak']);
+
+        Notification::create([
+            'user_id' => $submission->user_id,
+            'title' => 'Pengajuan Ditolak',
+            'message' => 'Pengajuan Anda ditolak.',
+        ]);
+
         return redirect()->route('admin.validate.index')->with('success', 'Pengajuan berhasil ditolak.');
     }
 
@@ -66,6 +81,12 @@ class ValidateController extends Controller
         $submission->update([
             'status' => 'direvisi',
             'note' => $request->note,
+        ]);
+
+        Notification::create([
+            'user_id' => $submission->user_id,
+            'title' => 'Revisi Pengajuan',
+            'message' => 'Pengajuan Anda butuh revisi, silahkan lihat apa yang perlu direvisi.',
         ]);
 
         return redirect()->route('admin.validate.index')->with('success', 'Pengajuan berhasil direvisi.');
