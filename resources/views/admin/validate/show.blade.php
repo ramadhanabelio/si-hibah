@@ -53,8 +53,8 @@
                                             'menunggu verifikasi' => 'warning',
                                             'ditolak' => 'danger',
                                             'diterima' => 'success',
-                                            'diproses' => 'secondary',
-                                            'direvisi' => 'info',
+                                            'diproses' => 'warning',
+                                            'direvisi' => 'secondary',
                                         ][$submission->status] ?? 'light';
                                 @endphp
                                 <span class="badge badge-{{ $badge }} p-2">{{ ucfirst($submission->status) }}</span>

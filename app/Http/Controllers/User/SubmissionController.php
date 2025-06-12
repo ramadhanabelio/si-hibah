@@ -175,6 +175,8 @@ class SubmissionController extends Controller
             $submission->photo = $request->file('photo')->store('photos', 'public');
         }
 
+        $submission->status = 'diproses';
+
         $submission->update($request->except([
             'proposal',
             'deed_of_establishment',
@@ -189,6 +191,7 @@ class SubmissionController extends Controller
             'account_book' => $submission->account_book,
             'rab_renovation' => $submission->rab_renovation,
             'photo' => $submission->photo,
+            'status' => $submission->status,
         ]);
 
         return redirect()->route('user.submission.index')->with('success', 'Pendaftaran hibah berhasil diperbarui.');

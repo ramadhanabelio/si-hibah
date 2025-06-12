@@ -30,7 +30,7 @@
 
                         <div class="status-card border-start-warning mb-3">
                             <div class="status-header">
-                                <span class="badge bg-warning text-dark">Diajukan</span>
+                                <span class="badge bg-warning text-white">Diproses</span>
                                 <small class="text-muted ml-2">{{ $submission->created_at->format('d M Y') }}</small>
                             </div>
                             <div class="status-body mt-2">
@@ -41,25 +41,25 @@
                         @if ($submission->status === 'ditolak')
                             <div class="status-card border-start-danger mb-3">
                                 <div class="status-header">
-                                    <span class="badge bg-danger">Ditolak</span>
+                                    <span class="badge bg-danger text-white">Ditolak</span>
                                 </div>
                                 <div class="status-body mt-2">
                                     <strong>Catatan:</strong> Dokumen tidak valid atau tidak lengkap.
                                 </div>
                             </div>
-                        @elseif ($submission->status === 'perlu revisi')
-                            <div class="status-card border-start-warning mb-3">
+                        @elseif ($submission->status === 'direvisi')
+                            <div class="status-card border-start-secondary mb-3">
                                 <div class="status-header">
-                                    <span class="badge bg-warning text-dark">Perlu Revisi</span>
+                                    <span class="badge bg-secondary text-white">Perlu Revisi</span>
                                 </div>
                                 <div class="status-body mt-2">
-                                    <strong>Catatan:</strong> Silahkan lengkapi dokumen pendukung.
+                                    <strong>Catatan:</strong> {{ $submission->note }}.
                                 </div>
                             </div>
                         @elseif ($submission->status === 'diterima')
                             <div class="status-card border-start-success mb-3">
                                 <div class="status-header">
-                                    <span class="badge bg-success">Diterima</span>
+                                    <span class="badge bg-success text-white">Diterima</span>
                                 </div>
                                 <div class="status-body mt-2">
                                     <strong>Catatan:</strong> Pengajuan disetujui dan akan diproses lebih lanjut.

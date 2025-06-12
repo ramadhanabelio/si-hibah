@@ -63,7 +63,7 @@
                                                 </td>
                                                 <td>
                                                     <a href="{{ route('user.submission.history', $submission->id) }}"
-                                                        class="badge badge-success" style="cursor:pointer;">
+                                                        class="badge badge-primary" style="cursor:pointer;">
                                                         Lihat Riwayat
                                                     </a>
                                                 </td>
@@ -85,15 +85,21 @@
                                                 </td>
                                                 <td>
                                                     @if ($submission->status !== 'diterima')
-                                                        <a href="{{ route('user.submission.edit', $submission) }}"
-                                                            class="btn btn-sm btn-warning">Edit</a>
-                                                        <form action="{{ route('user.submission.destroy', $submission) }}"
-                                                            method="POST" style="display:inline-block;">
-                                                            @csrf
-                                                            @method('DELETE')
-                                                            <button type="submit" class="btn btn-sm btn-danger"
-                                                                onclick="return confirm('Hapus pendaftaran ini?')">Hapus</button>
-                                                        </form>
+                                                        <div class="d-inline-flex gap-1">
+                                                            <a href="{{ route('user.submission.edit', $submission) }}"
+                                                                class="btn btn-warning btn-round mr-2">
+                                                                <i class="la la-pencil-square"></i>
+                                                            </a>
+                                                            <form
+                                                                action="{{ route('user.submission.destroy', $submission) }}"
+                                                                method="POST">
+                                                                @csrf
+                                                                @method('DELETE')
+                                                                <button type="submit" class="btn btn-danger btn-round"
+                                                                    onclick="return confirm('Hapus pendaftaran ini?')">
+                                                                    <i class="la la-trash"></i> </button>
+                                                            </form>
+                                                        </div>
                                                     @else
                                                         <span class="text-muted">-</span>
                                                     @endif
