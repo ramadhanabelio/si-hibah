@@ -92,9 +92,3 @@ If you encounter any issues or have questions, feel free to:
 
 -   Open an issue on [GitHub](https://github.com/ramadhanabelio/si-hibah/issues)
 -   Contact the maintainer: **ramadhanabelionusaputra@gmail.com**
-
----
-
-## 📄 License
-
-This project is open-source and available under the [MIT License](LICENSE).
