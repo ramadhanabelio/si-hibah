@@ -7,8 +7,8 @@
         <div class="content">
             <div class="container-fluid d-flex justify-content-center">
                 <div class="card shadow-lg rounded w-100">
-                    <div class="card-body">
-                        <h4 class="card-title text-center font-weight-bold mb-4">Verifikasi Proposal Hibah</h4>
+                    <div class="card-body m-2">
+                        <h5 class="font-weight-bold text-center mb-4">Verifikasi Proposal Hibah</h5>
 
                         <div class="row">
                             <div class="col-md-4 mb-3">
@@ -90,8 +90,73 @@
                             @endforeach
                         </div>
 
-                        <div class="mt-1">
-                            <h5 class="font-weight-bold text-center mb-2">Keputusan Verifikasi</h5>
+                        <hr>
+
+                        <div class="mt-2 mb-4">
+                            <h4 class="font-weight-bold text-center mt-4 mb-4">Persyaratan Proposal</h4>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <h6 class="font-weight-bold">Aspek Legalitas (Pasal 12 ayat 3)</h6>
+                                    <label class="form-check-label mb-2">
+                                        <input class="form-check-input" type="checkbox" value="">
+                                        <span class="form-check-sign">Nama Badan/Lembaga Organisasi Pemohon</span>
+                                    </label> <br>
+                                    <label class="form-check-label mb-2">
+                                        <input class="form-check-input" type="checkbox" value="">
+                                        <span class="form-check-sign">Akta Pendirian</span>
+                                    </label> <br>
+                                    <label class="form-check-label mb-2">
+                                        <input class="form-check-input" type="checkbox" value="">
+                                        <span class="form-check-sign">NPWP Organisasi Aktif</span>
+                                    </label> <br>
+                                    <label class="form-check-label mb-2">
+                                        <input class="form-check-input" type="checkbox" value="">
+                                        <span class="form-check-sign">Buku Rekening Organisasi</span>
+                                    </label>
+
+                                    <h6 class="font-weight-bold mt-4">Aspek Administratif (Pasal 12 ayat 4)</h6>
+                                    <label class="form-check-label mb-2">
+                                        <input class="form-check-input" type="checkbox" value="">
+                                        <span class="form-check-sign">Proposal</span>
+                                    </label> <br>
+
+                                    <label class="form-check-label">
+                                        <input class="form-check-input" type="checkbox" value="">
+                                        <span class="form-check-sign">Rencana Anggaran Biaya</span>
+                                    </label>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <h6 class="font-weight-bold">Dokumentasi</h6>
+                                    <label class="form-check-label">
+                                        <input class="form-check-input" type="checkbox" value="">
+                                        <span class="form-check-sign">Foto Kondisi saat ini</span>
+                                    </label>
+
+                                    <h6 class="font-weight-bold mt-4">Persyaratan Substantif (Pasal 12 ayat 5)</h6>
+                                    <label class="form-check-label mb-2">
+                                        <input class="form-check-input" type="checkbox" value="">
+                                        <span class="form-check-sign">Program sesuai dengan tujuan (dijelaskan dalam
+                                            proposal)</span>
+                                    </label>
+                                    <label class="form-check-label mb-2">
+                                        <input class="form-check-input" type="checkbox" value="">
+                                        <span class="form-check-sign">Manfaat jelas untuk jamaah (dijelaskan dalam
+                                            proposal)</span>
+                                    </label>
+                                    <label class="form-check-label mb-2">
+                                        <input class="form-check-input" type="checkbox" value="">
+                                        <span class="form-check-sign">Timeline pelaksanaan realistis (dijelaskan dalam
+                                            proposal)</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <hr>
+
+                        <div class="mt-2 mb-4">
+                            <h5 class="font-weight-bold text-center mt-4 mb-4">Keputusan Verifikasi</h5>
 
                             <form action="{{ route('admin.validate.revise', $submission->id) }}" method="POST">
                                 @csrf
