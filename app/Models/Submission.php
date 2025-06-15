@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Models\User;
+use App\Models\SubmissionValidation;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
@@ -36,5 +37,10 @@ class Submission extends Model
     public function user()
     {
         return $this->belongsTo(User::class);
+    }
+
+    public function validation()
+    {
+        return $this->hasOne(SubmissionValidation::class);
     }
 }

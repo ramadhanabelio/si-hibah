@@ -36,11 +36,13 @@ Route::middleware(['auth'])->prefix('user')->name('user.')->group(function () {
     Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
     Route::resource('submission', SubmissionController::class);
     Route::get('submission/{submission}/history', [SubmissionController::class, 'history'])->name('submission.history');
+    Route::get('submissions/revisi-ditolak', [SubmissionController::class, 'indexRe'])->name('submission.indexRe');
 });
 
 Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () {
     Route::get('dashboard', [AdminDashboardController::class, 'index'])->name('dashboard');
     Route::resource('validate', ValidateController::class);
+    Route::post('validate/{submission}/store-validation', [ValidateController::class, 'store'])->name('validate.store');
     Route::get('validate/{submission}/detail', [ValidateController::class, 'show'])->name('validate.show');
     Route::patch('validate/{submission}/accept', [ValidateController::class, 'accept'])->name('validate.accept');
     Route::patch('validate/{submission}/reject', [ValidateController::class, 'reject'])->name('validate.reject');

@@ -6,6 +6,7 @@ use App\Models\Submission;
 use App\Models\Notification;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\SubmissionValidation;
 
 class ValidateController extends Controller
 {
@@ -21,11 +22,6 @@ class ValidateController extends Controller
             $query->where('type', $request->type);
         }
 
-        // if ($request->filled('status')) {
-        //     $query->where('status', $request->status);
-        // } else {
-        //     $query->where('status', 'diproses');
-        // }
 
         if ($request->filled('year_submission')) {
             $query->where('year_submission', $request->year_submission);
@@ -44,6 +40,43 @@ class ValidateController extends Controller
     public function show(Submission $submission)
     {
         return view('admin.validate.show', compact('submission'));
+    }
+
+    public function store(Request $request, Submission $submission)
+    {
+        $data = $request->only([
+            'valid_proposal',
+            'valid_deed',
+            'valid_npwp',
+            'valid_account_book',
+            'valid_rab',
+            'valid_photo',
+
+            'valid_name_institution',
+            'valid_name_manager',
+            'valid_address',
+            'valid_subdistrict',
+            'valid_ward_village',
+            'valid_category',
+            'valid_type',
+
+            'subst_goal',
+            'subst_benefit',
+            'subst_timeline',
+        ]);
+
+        foreach ($data as $key => $value) {
+            $data[$key] = $value ? 1 : 0;
+        }
+
+        $data['submission_id'] = $submission->id;
+
+        SubmissionValidation::updateOrCreate(
+            ['submission_id' => $submission->id],
+            $data
+        );
+
+        return redirect()->route('admin.validate.index')->with('success', 'Validasi berhasil disimpan.');
     }
 
     public function accept(Submission $submission)

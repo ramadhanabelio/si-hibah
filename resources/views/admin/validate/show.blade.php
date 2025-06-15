@@ -78,7 +78,7 @@
                             @foreach ($docs as $key => $label)
                                 <div class="col-md-4 mb-4">
                                     <div class="border p-3 rounded bg-white">
-                                        <strong class="d-block mb-2">{{ $label }}</strong>
+                                        <strong class="d-block mb-2">PDF <br> {{ $label }}</strong>
                                         @if ($submission->$key)
                                             <a href="{{ asset('storage/' . $submission->$key) }}" target="_blank"
                                                 class="badge badge-success">Lihat</a>
@@ -94,63 +94,79 @@
 
                         <div class="mt-2 mb-4">
                             <h4 class="font-weight-bold text-center mt-4 mb-4">Persyaratan Proposal</h4>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <h6 class="font-weight-bold">Aspek Legalitas (Pasal 12 ayat 3)</h6>
-                                    <label class="form-check-label mb-2">
-                                        <input class="form-check-input" type="checkbox" value="">
-                                        <span class="form-check-sign">Nama Badan/Lembaga Organisasi Pemohon</span>
-                                    </label> <br>
-                                    <label class="form-check-label mb-2">
-                                        <input class="form-check-input" type="checkbox" value="">
-                                        <span class="form-check-sign">Akta Pendirian</span>
-                                    </label> <br>
-                                    <label class="form-check-label mb-2">
-                                        <input class="form-check-input" type="checkbox" value="">
-                                        <span class="form-check-sign">NPWP Organisasi Aktif</span>
-                                    </label> <br>
-                                    <label class="form-check-label mb-2">
-                                        <input class="form-check-input" type="checkbox" value="">
-                                        <span class="form-check-sign">Buku Rekening Organisasi</span>
-                                    </label>
+                            <form method="POST" action="{{ route('admin.validate.store', $submission->id) }}">
+                                @csrf
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <h6 class="font-weight-bold">Aspek Legalitas (Pasal 12 ayat 3)</h6>
+                                        <label class="form-check-label mb-2">
+                                            <input class="form-check-input" type="checkbox" name="valid_name_institution"
+                                                value="1">
+                                            <span class="form-check-sign">Nama Badan/Lembaga Organisasi Pemohon</span>
+                                        </label> <br>
+                                        <label class="form-check-label mb-2">
+                                            <input class="form-check-input" type="checkbox" name="valid_deed"
+                                                value="1">
+                                            <span class="form-check-sign">Akta Pendirian</span>
+                                        </label> <br>
+                                        <label class="form-check-label mb-2">
+                                            <input class="form-check-input" type="checkbox" name="valid_npwp"
+                                                value="1">
+                                            <span class="form-check-sign">NPWP Organisasi Aktif</span>
+                                        </label> <br>
+                                        <label class="form-check-label mb-2">
+                                            <input class="form-check-input" type="checkbox" name="valid_account_book"
+                                                value="1">
+                                            <span class="form-check-sign">Buku Rekening Organisasi</span>
+                                        </label>
 
-                                    <h6 class="font-weight-bold mt-4">Aspek Administratif (Pasal 12 ayat 4)</h6>
-                                    <label class="form-check-label mb-2">
-                                        <input class="form-check-input" type="checkbox" value="">
-                                        <span class="form-check-sign">Proposal</span>
-                                    </label> <br>
+                                        <h6 class="font-weight-bold mt-4">Aspek Administratif (Pasal 12 ayat 4)</h6>
+                                        <label class="form-check-label mb-2">
+                                            <input class="form-check-input" type="checkbox" name="valid_proposal"
+                                                value="1">
+                                            <span class="form-check-sign">Proposal</span>
+                                        </label> <br>
 
-                                    <label class="form-check-label">
-                                        <input class="form-check-input" type="checkbox" value="">
-                                        <span class="form-check-sign">Rencana Anggaran Biaya</span>
-                                    </label>
+                                        <label class="form-check-label">
+                                            <input class="form-check-input" type="checkbox" name="valid_rab"
+                                                value="1">
+                                            <span class="form-check-sign">Rencana Anggaran Biaya</span>
+                                        </label>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <h6 class="font-weight-bold">Dokumentasi</h6>
+                                        <label class="form-check-label">
+                                            <input class="form-check-input" type="checkbox" name="valid_photo"
+                                                value="1">
+                                            <span class="form-check-sign">Foto Kondisi saat ini</span>
+                                        </label>
+
+                                        <h6 class="font-weight-bold mt-4">Persyaratan Substantif (Pasal 12 ayat 5)</h6>
+                                        <label class="form-check-label mb-2">
+                                            <input class="form-check-input" type="checkbox" name="subst_goal"
+                                                value="1">
+                                            <span class="form-check-sign">Program sesuai dengan tujuan (dijelaskan dalam
+                                                proposal)</span>
+                                        </label>
+                                        <label class="form-check-label mb-2">
+                                            <input class="form-check-input" type="checkbox" name="subst_benefit"
+                                                value="1">
+                                            <span class="form-check-sign">Manfaat jelas untuk jamaah (dijelaskan dalam
+                                                proposal)</span>
+                                        </label>
+                                        <label class="form-check-label mb-2">
+                                            <input class="form-check-input" type="checkbox" name="subst_timeline"
+                                                value="1">
+                                            <span class="form-check-sign">Timeline pelaksanaan realistis (dijelaskan dalam
+                                                proposal)</span>
+                                        </label>
+                                    </div>
                                 </div>
-
-                                <div class="col-md-6">
-                                    <h6 class="font-weight-bold">Dokumentasi</h6>
-                                    <label class="form-check-label">
-                                        <input class="form-check-input" type="checkbox" value="">
-                                        <span class="form-check-sign">Foto Kondisi saat ini</span>
-                                    </label>
-
-                                    <h6 class="font-weight-bold mt-4">Persyaratan Substantif (Pasal 12 ayat 5)</h6>
-                                    <label class="form-check-label mb-2">
-                                        <input class="form-check-input" type="checkbox" value="">
-                                        <span class="form-check-sign">Program sesuai dengan tujuan (dijelaskan dalam
-                                            proposal)</span>
-                                    </label>
-                                    <label class="form-check-label mb-2">
-                                        <input class="form-check-input" type="checkbox" value="">
-                                        <span class="form-check-sign">Manfaat jelas untuk jamaah (dijelaskan dalam
-                                            proposal)</span>
-                                    </label>
-                                    <label class="form-check-label mb-2">
-                                        <input class="form-check-input" type="checkbox" value="">
-                                        <span class="form-check-sign">Timeline pelaksanaan realistis (dijelaskan dalam
-                                            proposal)</span>
-                                    </label>
+                                <div class="d-flex justify-content-center">
+                                    <button type="submit" class="btn btn-success btn-round mr-4">Simpan Validasi</button>
                                 </div>
-                            </div>
+                            </form>
                         </div>
 
                         <hr>

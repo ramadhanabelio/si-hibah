@@ -18,8 +18,18 @@ class SubmissionController extends Controller
         return view('user.submission.index', compact('submissions'));
     }
 
+    public function indexRe()
+    {
+        $submissions = Submission::whereIn('status', ['direvisi', 'ditolak'])
+            ->orderByDesc('created_at')
+            ->get();
+
+        return view('user.submission.index-re', compact('submissions'));
+    }
+
     public function show(Submission $submission)
     {
+        $submission->load('validation');
         return view('user.submission.show', compact('submission'));
     }
 

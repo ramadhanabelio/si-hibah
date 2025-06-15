@@ -137,10 +137,18 @@
                     @endif
 
                     @if (Auth::user()->role === 'user')
-                        <li class="nav-item {{ request()->routeIs('user.submission.*') ? 'active' : '' }}">
+                        <li
+                            class="nav-item {{ request()->routeIs('user.submission.*') && !request()->routeIs('user.submission.indexRe') ? 'active' : '' }}">
                             <a href="{{ route('user.submission.index') }}">
                                 <i class="la la-edit"></i>
                                 <p>Pendaftaran</p>
+                            </a>
+                        </li>
+
+                        <li class="nav-item {{ request()->routeIs('user.submission.indexRe') ? 'active' : '' }}">
+                            <a href="{{ route('user.submission.indexRe') }}">
+                                <i class="la la-undo"></i>
+                                <p>Pengajuan Ulang</p>
                             </a>
                         </li>
                     @endif
