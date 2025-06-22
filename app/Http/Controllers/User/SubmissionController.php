@@ -14,13 +14,14 @@ class SubmissionController extends Controller
 {
     public function index()
     {
-        $submissions = Submission::latest()->get();
+        $submissions = Submission::where('user_id', Auth::id())->latest()->get();
         return view('user.submission.index', compact('submissions'));
     }
 
     public function indexRe()
     {
-        $submissions = Submission::whereIn('status', ['direvisi', 'ditolak'])
+        $submissions = Submission::where('user_id', Auth::id())
+            ->whereIn('status', ['direvisi', 'ditolak'])
             ->orderByDesc('created_at')
             ->get();
 

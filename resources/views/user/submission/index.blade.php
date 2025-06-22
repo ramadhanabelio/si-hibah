@@ -84,7 +84,7 @@
                                                     </a>
                                                 </td>
                                                 <td>
-                                                    @if ($submission->status !== 'diterima')
+                                                    @if ($submission->status === 'direvisi' || $submission->status === 'diproses')
                                                         <div class="d-inline-flex gap-1">
                                                             <a href="{{ route('user.submission.edit', $submission) }}"
                                                                 class="btn btn-warning btn-round mr-2">
@@ -97,7 +97,8 @@
                                                                 @method('DELETE')
                                                                 <button type="submit" class="btn btn-danger btn-round"
                                                                     onclick="return confirm('Hapus pendaftaran ini?')">
-                                                                    <i class="la la-trash"></i> </button>
+                                                                    <i class="la la-trash"></i>
+                                                                </button>
                                                             </form>
                                                         </div>
                                                     @else

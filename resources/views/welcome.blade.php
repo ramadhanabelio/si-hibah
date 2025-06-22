@@ -1295,7 +1295,8 @@
                             </p>
 
                             <div class="hero-buttons">
-                                <a href="#about" class="btn btn-primary me-0 me-sm-2 mx-1">Ajukan Sekarang</a>
+                                <a href="{{ route('login.form') }}" class="btn btn-primary me-0 me-sm-2 mx-1">Ajukan
+                                    Sekarang</a>
                                 <a href="https://www.youtube.com/watch?v=Y7f98aduVJ8"
                                     class="btn btn-link mt-2 mt-sm-0 glightbox">
                                     <i class="bi bi-play-circle me-1"></i>
@@ -1366,7 +1367,7 @@
                             </div>
                         </div>
 
-                        <div class="info-wrapper">
+                        {{-- <div class="info-wrapper">
                             <div class="row gy-4">
                                 <div class="col-lg-5">
                                 </div>
@@ -1375,7 +1376,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> --}}
                     </div>
 
                     <div class="col-xl-6" data-aos="fade-up" data-aos-delay="300">
@@ -1762,9 +1763,8 @@
                                 <h5 class="card-title"><i class="bi bi-download"></i> Unduh Dokumen</h5>
                                 <p class="card-text text-muted">Dokumen lengkap Peraturan Bupati tentang Pedoman Hibah dan
                                     Bantuan Sosial</p>
-                                <a href="#" class="btn btn-primary btn-lg">
-                                    <i class="bi bi-file-pdf"></i>
-                                    Download Perbup No. 32 Tahun 2022
+                                <a href="{{ asset('docs/perbup.pdf') }}" download class="btn btn-primary btn-lg">
+                                    <i class="bi bi-file-pdf ms-2"></i> Download Perbup No. 32 Tahun 2022
                                 </a>
                             </div>
                         </div>
@@ -2017,7 +2017,7 @@
                                         Template surat permohonan hibah yang ditujukan kepada Walikota sebagai dokumen
                                         formal pengajuan
                                     </p>
-                                    <a href="#" class="download-btn">
+                                    <a href="{{ asset('docs/perbup.pdf') }}" class="download-btn">
                                         <i class="bi bi-download"></i>
                                         Download Template
                                     </a>
@@ -2041,7 +2041,7 @@
                                         Format proposal kegiatan yang berisi latar belakang, tujuan, rencana kegiatan, dan
                                         manfaat program
                                     </p>
-                                    <a href="#" class="download-btn">
+                                    <a href="{{ asset('docs/proposal.pdf') }}" class="download-btn">
                                         <i class="bi bi-download"></i>
                                         Download Template
                                     </a>
@@ -2064,7 +2064,7 @@
                                         Rencana Anggaran Biaya yang detail dan terperinci untuk setiap item kegiatan yang
                                         akan dilaksanakan
                                     </p>
-                                    <a href="#" class="download-btn">
+                                    <a href="{{ asset('docs/perbup.pdf') }}" class="download-btn">
                                         <i class="bi bi-download"></i>
                                         Download Template
                                     </a>
@@ -2089,7 +2089,7 @@
                                         Surat keterangan domisili dari Lurah setempat sebagai bukti keberadaan organisasi di
                                         wilayah tersebut
                                     </p>
-                                    <a href="#" class="download-btn">
+                                    <a href="{{ asset('docs/perbup.pdf') }}" class="download-btn">
                                         <i class="bi bi-download"></i>
                                         Download Template
                                     </a>
@@ -2102,19 +2102,19 @@
                                             <div class="paper">
                                                 <i class="bi bi-file-earmark-check paper-icon"></i>
                                                 <div class="paper-text">
-                                                    SKet<br>
+                                                    Akte Pendirian<br>
                                                     Kementerian<br>
                                                     Kemenko
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <h3 class="document-title">Surat Keterangan</h3>
+                                    <h3 class="document-title">Akte Pendirian</h3>
                                     <p class="document-description">
-                                        Surat keterangan dari Kementerian terkait atau instansi berwenang sebagai legalitas
+                                        Akte Pendirian dari Kementerian terkait atau instansi berwenang sebagai legalitas
                                         organisasi
                                     </p>
-                                    <a href="#" class="download-btn">
+                                    <a href="{{ asset('docs/akte-pendirian.pdf') }}" class="download-btn">
                                         <i class="bi bi-download"></i>
                                         Download Template
                                     </a>
@@ -2140,7 +2140,7 @@
                                         Template pengumpulan KTP Ketua, Sekretaris, dan Bendahara organisasi sebagai
                                         identitas pengurus
                                     </p>
-                                    <a href="#" class="download-btn">
+                                    <a href="{{ asset('docs/perbup.pdf') }}" class="download-btn">
                                         <i class="bi bi-download"></i>
                                         Download Template
                                     </a>
@@ -2186,7 +2186,6 @@
                             </div>
                         </div>
                     </section>
-
 
                     <!-- Contact Section -->
                     <section id="contact" class="contact section light-background">
@@ -2364,7 +2363,7 @@
                             // Replace with actual PDF URL
                             alert(
                                 'Fitur download akan mengarahkan ke dokumen Perbup No. 32 Tahun 2022. Silakan hubungi admin untuk mendapatkan dokumen lengkap.'
-                                );
+                            );
                             // window.open('path/to/PERBUP_NO_32_TAHUN_2022.pdf', '_blank');
                         }
 

@@ -46,19 +46,24 @@
                         $isAuthPage = request()->is('login') || request()->is('register');
                     @endphp
 
-                    <li><a href="{{ $isAuthPage ? url('/') : '#hero' }}">Beranda</a></li>
-                    <li><a href="{{ $isAuthPage ? url('/') : '#about' }}">Tentang Kami</a></li>
-                    <li><a href="{{ $isAuthPage ? url('/') : '#features' }}">Keunggulan</a></li>
-                    <li><a href="{{ $isAuthPage ? url('/') : '#features-cards' }}">Alur</a></li>
-                    <li><a href="{{ $isAuthPage ? url('/') : '#services' }}">Kategori</a></li>
-                    <li><a href="{{ $isAuthPage ? url('/') : '#contact' }}">Kontak</a></li>
+                    <li><a href="{{ $isAuthPage ? url('/') : '#hero' }}" class="text-decoration-none">Beranda</a></li>
+                    <li><a href="{{ $isAuthPage ? url('/') : '#about' }}" class="text-decoration-none">Tentang Kami</a>
+                    </li>
+                    <li><a href="{{ $isAuthPage ? url('/') : '#features' }}"
+                            class="text-decoration-none">Keunggulan</a></li>
+                    <li><a href="{{ $isAuthPage ? url('/') : '#features-cards' }}"
+                            class="text-decoration-none">Alur</a></li>
+                    <li><a href="{{ $isAuthPage ? url('/') : '#services' }}" class="text-decoration-none">Kategori</a>
+                    </li>
+                    <li><a href="{{ $isAuthPage ? url('/') : '#contact' }}" class="text-decoration-none">Kontak</a>
+                    </li>
                 </ul>
                 <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
             </nav>
 
             <div class="d-flex">
-                <a class="btn-getstarted" href="{{ route('login.form') }}">Masuk</a>
-                <a class="btn-getstarted" href="{{ route('register.form') }}">Daftar</a>
+                <a class="btn-getstarted text-decoration-none" href="{{ route('login.form') }}">Masuk</a>
+                <a class="btn-getstarted text-decoration-none" href="{{ route('register.form') }}">Daftar</a>
             </div>
         </div>
     </header>
@@ -129,7 +134,7 @@
             </p>
             <div class="credits">
                 Designed by
-                <a href="#">Nadia Khairunnisak</a>
+                <a href="#" class="text-decoration-none">Nadia Khairunnisak</a>
             </div>
         </div>
     </footer>
