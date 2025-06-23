@@ -128,6 +128,12 @@
                                 <p>Pengajuan</p>
                             </a>
                         </li>
+                        <li class="nav-item {{ request()->routeIs('admin.periods.*') ? 'active' : '' }}">
+                            <a href="{{ route('admin.periods.index') }}">
+                                <i class="la la-file"></i>
+                                <p>Pengajuan</p>
+                            </a>
+                        </li>
                         <li class="nav-item {{ request()->routeIs('admin.contact.*') ? 'active' : '' }}">
                             <a href="{{ route('admin.contact.index') }}">
                                 <i class="la la-phone"></i>

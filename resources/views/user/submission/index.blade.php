@@ -14,13 +14,34 @@
                         <div class="card">
                             <div class="card-header d-flex justify-content-between align-items-center">
                                 <div class="card-title mb-0">Pendaftaran Hibah</div>
-                                <a href="{{ route('user.submission.create') }}" class="btn btn-custom">
-                                    Ajukan Sekarang
+                                @php
+                                    $isActive = \App\Models\SubmissionPeriod::isActive();
+                                @endphp
+
+                                <a href="{{ $isActive ? route('user.submission.create') : '#' }}"
+                                    class="btn btn-custom {{ $isActive ? '' : 'disabled' }}">
+                                    Ajukan Hibah
                                 </a>
+
+                                @if (!$isActive)
+                                    <p class="text-danger mt-2">Pendaftaran sudah ditutup.</p>
+                                @endif
                             </div>
                             <div class="card-body">
                                 @if (session('success'))
                                     <div class="alert alert-success text-center">{{ session('success') }}</div>
+                                @endif
+
+                                @php
+                                    $period = \App\Models\SubmissionPeriod::orderByDesc('id')->first();
+                                @endphp
+
+                                @if ($period)
+                                    <div class="alert alert-info">
+                                        <strong>Periode Pengajuan:</strong><br>
+                                        Dibuka: {{ \Carbon\Carbon::parse($period->start_date)->format('d M Y') }}<br>
+                                        Ditutup: {{ \Carbon\Carbon::parse($period->end_date)->format('d M Y') }}
+                                    </div>
                                 @endif
                                 <table class="table table-hover custom-table">
                                     <thead>

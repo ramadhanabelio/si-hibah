@@ -19,6 +19,12 @@
                                 @if (session('success'))
                                     <div class="alert alert-success text-center">{{ session('success') }}</div>
                                 @endif
+
+                                @if ($submission->status == 'direvisi' || $submission->status == 'ditolak')
+                                    <div class="alert alert-warning">
+                                        <strong>Catatan:</strong> {{ $submission->note }}
+                                    </div>
+                                @endif
                                 <table class="table table-hover custom-table">
                                     <thead>
                                         <tr>

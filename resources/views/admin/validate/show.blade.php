@@ -92,9 +92,9 @@
 
                         <hr>
 
-                        <div class="mt-2 mb-4">
-                            <h4 class="font-weight-bold text-center mt-4 mb-4">Persyaratan Proposal</h4>
-                            <form method="POST" action="{{ route('admin.validate.store', $submission->id) }}">
+                        <form method="POST" action="{{ route('admin.validate.store', $submission->id) }}">
+                            <div class="mt-2 mb-4">
+                                <h4 class="font-weight-bold text-center mt-4 mb-4">Persyaratan Proposal</h4>
                                 @csrf
                                 <div class="row">
                                     <div class="col-md-6">
@@ -163,47 +163,35 @@
                                         </label>
                                     </div>
                                 </div>
-                                <div class="d-flex justify-content-center">
-                                    <button type="submit" class="btn btn-success btn-round mr-4">Simpan Validasi</button>
+                            </div>
+
+                            <hr>
+
+                            <div class="mt-2 mb-4">
+                                <h5 class="font-weight-bold text-center mt-4 mb-3">Keputusan Verifikasi</h5>
+
+                                <div class="form-group">
+                                    <label for="decision">Keputusan</label>
+                                    <select name="decision" id="decision" class="form-control" required>
+                                        <option value="">Pilih Keputusan</option>
+                                        <option value="diterima">Terima</option>
+                                        <option value="ditolak">Tolak</option>
+                                        <option value="direvisi">Revisi</option>
+                                    </select>
                                 </div>
-                            </form>
-                        </div>
 
-                        <hr>
-
-                        <div class="mt-2 mb-4">
-                            <h5 class="font-weight-bold text-center mt-4 mb-4">Keputusan Verifikasi</h5>
-
-                            <form action="{{ route('admin.validate.revise', $submission->id) }}" method="POST">
-                                @csrf
-                                @method('PATCH')
-
-                                <div class="form-group mb-3">
+                                <div class="form-group">
+                                    <label for="note">Catatan (jika revisi)</label>
                                     <textarea name="note" id="note" class="form-control" rows="3"
                                         placeholder="Berikan catatan atau feedback untuk pemohon...">{{ old('note') }}</textarea>
                                 </div>
 
-                                <div class="d-flex justify-content-center gap-3 mb-4">
-                                    <button type="submit" class="btn btn-warning btn-round">Revisi</button>
+                                <div class="text-center">
+                                    <button type="submit" class="btn btn-primary btn-round">Simpan Validasi &
+                                        Keputusan</button>
                                 </div>
-                            </form>
-
-                            <div class="d-flex justify-content-center">
-                                <form action="{{ route('admin.validate.accept', $submission->id) }}" method="POST"
-                                    class="d-inline">
-                                    @csrf
-                                    @method('PATCH')
-                                    <button type="submit" class="btn btn-success btn-round mr-4">Terima</button>
-                                </form>
-
-                                <form action="{{ route('admin.validate.reject', $submission->id) }}" method="POST"
-                                    class="d-inline">
-                                    @csrf
-                                    @method('PATCH')
-                                    <button type="submit" class="btn btn-danger btn-round">Tolak</button>
-                                </form>
                             </div>
-                        </div>
+                        </form>
 
                         <div class="text-center mt-4">
                             <a href="{{ route('admin.validate.index') }}" class="btn btn-secondary">Kembali</a>

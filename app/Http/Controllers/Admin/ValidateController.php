@@ -51,7 +51,6 @@ class ValidateController extends Controller
             'valid_account_book',
             'valid_rab',
             'valid_photo',
-
             'valid_name_institution',
             'valid_name_manager',
             'valid_address',
@@ -59,7 +58,6 @@ class ValidateController extends Controller
             'valid_ward_village',
             'valid_category',
             'valid_type',
-
             'subst_goal',
             'subst_benefit',
             'subst_timeline',
@@ -76,7 +74,36 @@ class ValidateController extends Controller
             $data
         );
 
-        return redirect()->route('admin.validate.index')->with('success', 'Validasi berhasil disimpan.');
+        // Penanganan status keputusan
+        $request->validate([
+            'decision' => 'required|in:diterima,ditolak,direvisi',
+            'note' => 'nullable|string|max:500',
+        ]);
+
+        $submission->update([
+            'status' => $request->decision,
+            'note' => $request->decision === 'direvisi' ? $request->note : null,
+        ]);
+
+        $messages = [
+            'diterima' => 'Pengajuan berhasil diterima.',
+            'ditolak' => 'Pengajuan berhasil ditolak.',
+            'direvisi' => 'Pengajuan berhasil direvisi.',
+        ];
+
+        $notifMessages = [
+            'diterima' => 'Pengajuan Anda sudah diterima.',
+            'ditolak' => 'Pengajuan Anda ditolak.',
+            'direvisi' => 'Pengajuan Anda butuh revisi, silahkan lihat apa yang perlu direvisi.',
+        ];
+
+        Notification::create([
+            'user_id' => $submission->user_id,
+            'title' => ucfirst($request->decision == 'direvisi' ? 'Revisi Pengajuan' : 'Pengajuan ' . ucfirst($request->decision)),
+            'message' => $notifMessages[$request->decision],
+        ]);
+
+        return redirect()->route('admin.validate.index')->with('success', $messages[$request->decision]);
     }
 
     public function accept(Submission $submission)

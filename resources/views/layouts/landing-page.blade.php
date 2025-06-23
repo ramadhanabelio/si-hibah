@@ -49,11 +49,13 @@
                     <li><a href="{{ $isAuthPage ? url('/') : '#hero' }}" class="text-decoration-none">Beranda</a></li>
                     <li><a href="{{ $isAuthPage ? url('/') : '#about' }}" class="text-decoration-none">Tentang Kami</a>
                     </li>
-                    <li><a href="{{ $isAuthPage ? url('/') : '#features' }}"
-                            class="text-decoration-none">Keunggulan</a></li>
-                    <li><a href="{{ $isAuthPage ? url('/') : '#features-cards' }}"
-                            class="text-decoration-none">Alur</a></li>
-                    <li><a href="{{ $isAuthPage ? url('/') : '#services' }}" class="text-decoration-none">Kategori</a>
+                    <li><a href="{{ $isAuthPage ? url('/') : '#syarat-ketentuan' }}"
+                            class="text-decoration-none">Syarat dan
+                            Prosedur</a></li>
+                    <li><a href="{{ $isAuthPage ? url('/') : '#services' }}"
+                            class="text-decoration-none">Pengumuman</a>
+                    </li>
+                    <li><a href="{{ $isAuthPage ? url('/') : '#syarat' }}" class="text-decoration-none">Dokumen</a>
                     </li>
                     <li><a href="{{ $isAuthPage ? url('/') : '#contact' }}" class="text-decoration-none">Kontak</a>
                     </li>

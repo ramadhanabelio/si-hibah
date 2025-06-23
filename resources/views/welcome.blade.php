@@ -3,26 +3,41 @@
 @section('content')
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.0/font/bootstrap-icons.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.1/font/bootstrap-icons.min.css"
-        rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.0/font/bootstrap-icons.min.css"
-        rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.0/font/bootstrap-icons.min.css"
-        rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.0/font/bootstrap-icons.min.css"
-        rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.1/font/bootstrap-icons.min.css" rel="stylesheet">
     <style>
+        body,
+        body a,
+        body a:hover,
+        body a:focus,
+        body a:active {
+            text-decoration: none !important;
+        }
+
+        a,
+        a:hover,
+        a:focus,
+        a:active {
+            text-decoration: none !important;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        .btn,
+        .btn-primary,
+        .btn-download,
+        .nav-link,
+        .nav-tabs .nav-link,
+        .read-more,
+        .download-btn {
+            text-decoration: none !important;
+        }
+
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
@@ -1382,10 +1397,8 @@
                     <div class="col-xl-6" data-aos="fade-up" data-aos-delay="300">
                         <div class="image-wrapper">
                             <div class="images position-relative" data-aos="zoom-out" data-aos-delay="400">
-                                <img src="img/about-5.webp" alt="Business Meeting"
-                                    class="img-fluid main-image rounded-4" />
-                                <img src="img/about-2.webp" alt="Team Discussion"
-                                    class="img-fluid small-image rounded-4" />
+                                <img src="img/about-5.webp" alt="Business Meeting" class="img-fluid main-image rounded-4" />
+                                <img src="img/about-2.webp" alt="Team Discussion" class="img-fluid small-image rounded-4" />
                             </div>
                         </div>
                     </div>
@@ -1395,456 +1408,464 @@
         <!-- /About Section -->
 
         <!-- Features Section -->
-        <section id="features" class="features section">
+        {{-- <section id="features" class="features section">
+            
+        </section> --}}
+
+        <!-- Section Title -->
+        <section class="hero-section">
+            <div class="container" data-aos="fade-up">
+                <h1><i class="bi bi-mosque"></i> Hibah Keagamaan</h1>
+                <p>Panduan Lengkap Pengajuan Hibah untuk Masjid, Mushola, dan Kegiatan Keagamaan<br>
+                    Kabupaten Kepulauan Meranti</p>
+            </div>
+        </section>
+
+        <!-- Main Content -->
+        <section class="py-5" id="syarat-ketentuan">
+            <div class="container">
+                <!-- Navigation Tabs -->
+                <div class="d-flex justify-content-center">
+                    <ul class="nav nav-tabs" data-aos="fade-up" data-aos-delay="100">
+                        <li class="nav-item">
+                            <a class="nav-link active show" data-bs-toggle="tab" data-bs-target="#syarat-prosedur">
+                                <h5><i class="bi bi-file-text"></i> Syarat & Prosedur</h5>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-bs-toggle="tab" data-bs-target="#dokumen-persyaratan">
+                                <h5><i class="bi bi-folder"></i> Dokumen Persyaratan</h5>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-bs-toggle="tab" data-bs-target="#tahap-seleksi">
+                                <h5><i class="bi bi-diagram-3"></i> Tahap Seleksi</h5>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-bs-toggle="tab" data-bs-target="#pertanggungjawaban">
+                                <h5><i class="bi bi-clipboard-check"></i> Pertanggungjawaban</h5>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Tab Content -->
+                <div class="tab-content" data-aos="fade-up" data-aos-delay="200">
+
+                    <!-- Syarat & Prosedur Tab -->
+                    <div class="tab-pane fade active show" id="syarat-prosedur">
+                        <h3 class="section-title">Syarat & Prosedur Pengajuan Hibah Keagamaan</h3>
+
+                        <div class="row">
+                            <div class="col-lg-8 mx-auto">
+                                <p class="text-center text-muted mb-4">
+                                    Hibah keagamaan meliputi bantuan untuk masjid, mushola, dan kegiatan keagamaan yang
+                                    diajukan melalui Sekretariat Daerah sesuai dengan urusan pemerintahan umum.
+                                </p>
+
+                                <div class="highlight-box">
+                                    <h5><i class="bi bi-info-circle"></i> Informasi Penting</h5>
+                                    <p class="mb-2"><strong>Penerima Hibah:</strong> Organisasi keagamaan, pengurus
+                                        masjid/mushola, dan lembaga keagamaan yang memenuhi syarat.</p>
+                                    <p class="mb-0"><strong>Pengelola:</strong> Sekretariat Daerah Kabupaten
+                                        Kepulauan Meranti</p>
+                                </div>
+
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h5><i class="bi bi-calendar-event"></i> Jadwal Pengajuan</h5>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="checklist-item">
+                                            <i class="bi bi-calendar-check"></i>
+                                            <div>
+                                                <strong>APBD Tahun Berikutnya:</strong><br>
+                                                Usulan disampaikan paling lambat bulan Juni
+                                            </div>
+                                        </div>
+                                        <div class="checklist-item">
+                                            <i class="bi bi-calendar-plus"></i>
+                                            <div>
+                                                <strong>Perubahan APBD:</strong><br>
+                                                Usulan disampaikan paling lambat bulan April tahun berkenaan
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h5><i class="bi bi-list-check"></i> Ketentuan Umum</h5>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="checklist-item">
+                                            <i class="bi bi-check-circle"></i>
+                                            <div>
+                                                <strong>Bentuk Hibah:</strong> Dapat berupa uang, barang, atau jasa
+                                            </div>
+                                        </div>
+                                        <div class="checklist-item">
+                                            <i class="bi bi-check-circle"></i>
+                                            <div>
+                                                <strong>Tujuan:</strong> Mendukung kegiatan keagamaan dan pembangunan
+                                                sarana ibadah
+                                            </div>
+                                        </div>
+                                        <div class="checklist-item">
+                                            <i class="bi bi-check-circle"></i>
+                                            <div>
+                                                <strong>Evaluasi:</strong> Tim evaluasi menilai aspek legalitas,
+                                                administratif, dan substansi kegiatan
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Dokumen Persyaratan Tab -->
+                    <div class="tab-pane fade" id="dokumen-persyaratan">
+                        <h3 class="section-title">Dokumen Persyaratan Proposal</h3>
+
+                        <div class="requirements-grid">
+                            <div class="requirement-card">
+                                <h6><i class="bi bi-file-earmark-text"></i> Aspek Legalitas (Pasal 12 ayat 3)</h6>
+                                <ul class="requirement-list">
+                                    <li><i class="bi bi-dot"></i> Nama Badan/Lembaga Organisasi Pemohon</li>
+                                    <li><i class="bi bi-dot"></i> Akta Pendirian Organisasi</li>
+                                    <li><i class="bi bi-dot"></i> NPWP Organisasi Aktif</li>
+                                    <li><i class="bi bi-dot"></i> Buku Rekening Organisasi</li>
+                                </ul>
+                            </div>
+
+                            <div class="requirement-card">
+                                <h6><i class="bi bi-folder"></i> Aspek Administratif (Pasal 12 ayat 4)</h6>
+                                <ul class="requirement-list">
+                                    <li><i class="bi bi-dot"></i> Proposal Kegiatan/Pembangunan</li>
+                                    <li><i class="bi bi-dot"></i> Rencana Anggaran Biaya (RAB)</li>
+                                    <li><i class="bi bi-dot"></i> Surat Permohonan resmi</li>
+                                    <li><i class="bi bi-dot"></i> Surat Keterangan dari Kelurahan/Desa</li>
+                                </ul>
+                            </div>
+
+                            <div class="requirement-card">
+                                <h6><i class="bi bi-camera"></i> Dokumentasi</h6>
+                                <ul class="requirement-list">
+                                    <li><i class="bi bi-dot"></i> Foto kondisi saat ini (untuk renovasi/pembangunan)
+                                    </li>
+                                    <li><i class="bi bi-dot"></i> Foto kegiatan sebelumnya (untuk kegiatan rutin)</li>
+                                    <li><i class="bi bi-dot"></i> Sketsa/denah bangunan (jika pembangunan)</li>
+                                </ul>
+                            </div>
+
+                            <div class="requirement-card">
+                                <h6><i class="bi bi-clipboard-data"></i> Persyaratan Substantif (Pasal 12 ayat 5)</h6>
+                                <ul class="requirement-list">
+                                    <li><i class="bi bi-dot"></i> Program sesuai dengan tujuan (dijelaskan dalam
+                                        proposal)</li>
+                                    <li><i class="bi bi-dot"></i> Manfaat jelas untuk jamaah (dijelaskan dalam
+                                        proposal)</li>
+                                    <li><i class="bi bi-dot"></i> Timeline pelaksanaan realistis (dijelaskan dalam
+                                        proposal)</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="warning-box">
+                            <h5><i class="bi bi-exclamation-triangle"></i> Catatan Penting</h5>
+                            <p class="mb-2">• Semua dokumen harus asli atau fotokopi yang dilegalisir</p>
+                            <p class="mb-2">• Proposal harus mencakup latar belakang, tujuan, manfaat, dan rencana
+                                pelaksanaan</p>
+                            <p class="mb-0">• RAB harus detail dan sesuai dengan harga pasar setempat</p>
+                        </div>
+                    </div>
+
+                    <!-- Tahap Seleksi Tab -->
+                    <div class="tab-pane fade" id="tahap-seleksi">
+                        <h3 class="section-title">Tahapan Proses Seleksi</h3>
+
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <div class="timeline-marker">1</div>
+                                <div class="timeline-content">
+                                    <h5>Pengajuan Proposal</h5>
+                                    <p>Pemohon menyerahkan proposal lengkap dengan semua dokumen persyaratan ke
+                                        Sekretariat Daerah Kabupaten Kepulauan Meranti.</p>
+                                    <small class="text-muted">Waktu: Sesuai jadwal pengajuan</small>
+                                </div>
+                            </div>
+
+                            <div class="timeline-item">
+                                <div class="timeline-marker">2</div>
+                                <div class="timeline-content">
+                                    <h5>Verifikasi Administratif</h5>
+                                    <p>Tim verifikasi memeriksa kelengkapan dokumen dan kesesuaian dengan format yang
+                                        ditentukan.</p>
+                                    <small class="text-muted">Waktu: 7-14 hari kerja</small>
+                                </div>
+                            </div>
+
+                            <div class="timeline-item">
+                                <div class="timeline-marker">3</div>
+                                <div class="timeline-content">
+                                    <h5>Evaluasi Tim Penilai</h5>
+                                    <p>Tim evaluasi menilai aspek legalitas, administratif, dan substansi kegiatan
+                                        dengan tingkat kewajaran biaya.</p>
+                                    <small class="text-muted">Waktu: 14-21 hari kerja</small>
+                                </div>
+                            </div>
+
+                            <div class="timeline-item">
+                                <div class="timeline-marker">4</div>
+                                <div class="timeline-content">
+                                    <h5>Verifikasi Lapangan</h5>
+                                    <p>Tim melakukan kunjungan ke lokasi untuk memastikan kondisi riil dan kebutuhan
+                                        hibah.</p>
+                                    <small class="text-muted">Waktu: Sesuai jadwal tim</small>
+                                </div>
+                            </div>
+
+                            <div class="timeline-item">
+                                <div class="timeline-marker">5</div>
+                                <div class="timeline-content">
+                                    <h5>Penetapan Penerima</h5>
+                                    <p>Bupati menetapkan penerima hibah berdasarkan rekomendasi tim evaluasi dan
+                                        ketersediaan anggaran.</p>
+                                    <small class="text-muted">Waktu: Setelah evaluasi selesai</small>
+                                </div>
+                            </div>
+
+                            <div class="timeline-item">
+                                <div class="timeline-marker">6</div>
+                                <div class="timeline-content">
+                                    <h5>Penerbitan NPHD</h5>
+                                    <p>Naskah Perjanjian Hibah Daerah (NPHD) diterbitkan dan ditandatangani oleh kedua
+                                        belah pihak.</p>
+                                    <small class="text-muted">Waktu: Setelah penetapan</small>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="highlight-box">
+                            <h5><i class="bi bi-info-circle"></i> Kriteria Penilaian</h5>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <p><strong>Aspek Legalitas (25%)</strong></p>
+                                    <ul class="small">
+                                        <li>Kelengkapan dokumen organisasi</li>
+                                        <li>Status hukum pemohon</li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-6">
+                                    <p><strong>Aspek Administratif (25%)</strong></p>
+                                    <ul class="small">
+                                        <li>Kelengkapan proposal</li>
+                                        <li>Kewajaran anggaran</li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-6">
+                                    <p><strong>Aspek Substansi (35%)</strong></p>
+                                    <ul class="small">
+                                        <li>Manfaat untuk masyarakat</li>
+                                        <li>Kesesuaian dengan program daerah</li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-6">
+                                    <p><strong>Aspek Teknis (15%)</strong></p>
+                                    <ul class="small">
+                                        <li>Feasibilitas pelaksanaan</li>
+                                        <li>Timeline realistis</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Pertanggungjawaban Tab -->
+                    <div class="tab-pane fade" id="pertanggungjawaban">
+                        <h3 class="section-title">Kewajiban Pertanggungjawaban</h3>
+
+                        <div class="row">
+                            <div class="col-lg-8 mx-auto">
+                                <p class="text-center text-muted mb-4">
+                                    Penerima hibah bertanggung jawab secara formil dan materil atas penggunaan hibah
+                                    yang diterima sesuai dengan ketentuan yang berlaku.
+                                </p>
+
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h5><i class="bi bi-file-earmark-check"></i> Dokumen Pertanggungjawaban</h5>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="checklist-item">
+                                            <i class="bi bi-file-text"></i>
+                                            <div>
+                                                <strong>Laporan Penggunaan Hibah:</strong><br>
+                                                Laporan rinci penggunaan hibah kepada Bupati melalui Sekretariat Daerah
+                                            </div>
+                                        </div>
+                                        <div class="checklist-item">
+                                            <i class="bi bi-file-earmark-text"></i>
+                                            <div>
+                                                <strong>Surat Pertanggungjawaban:</strong><br>
+                                                Surat pernyataan bahwa hibah telah digunakan sesuai dengan NPHD
+                                            </div>
+                                        </div>
+                                        <div class="checklist-item">
+                                            <i class="bi bi-receipt"></i>
+                                            <div>
+                                                <strong>Bukti Pengeluaran:</strong><br>
+                                                Kuitansi, nota, dan bukti pengeluaran yang lengkap dan sah
+                                            </div>
+                                        </div>
+                                        <div class="checklist-item">
+                                            <i class="bi bi-camera"></i>
+                                            <div>
+                                                <strong>Dokumentasi Kegiatan:</strong><br>
+                                                Foto-foto pelaksanaan kegiatan atau hasil pembangunan
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="warning-box">
+                                    <h5><i class="bi bi-clock"></i> Batas Waktu Penting</h5>
+                                    <p class="mb-2"><strong>Pertanggungjawaban:</strong> Maksimal 30 hari setelah
+                                        hibah diterima</p>
+                                    <p class="mb-0"><strong>Pengembalian:</strong> Hibah yang tidak digunakan sesuai
+                                        tujuan wajib dikembalikan</p>
+                                </div>
+
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h5><i class="bi bi-exclamation-triangle"></i> Sanksi</h5>
+                                    </div>
+                                    <div class="card-body">
+                                        <p class="mb-3">Penerima hibah yang tidak memenuhi kewajiban dapat dikenakan
+                                            sanksi:</p>
+                                        <div class="checklist-item">
+                                            <i class="bi bi-x-circle"></i>
+                                            <div>
+                                                <strong>Penghentian Hibah:</strong> Pencairan hibah dapat dihentikan
+                                            </div>
+                                        </div>
+                                        <div class="checklist-item">
+                                            <i class="bi bi-arrow-return-left"></i>
+                                            <div>
+                                                <strong>Pengembalian Dana:</strong> Wajib mengembalikan hibah yang telah
+                                                diterima
+                                            </div>
+                                        </div>
+                                        <div class="checklist-item">
+                                            <i class="bi bi-ban"></i>
+                                            <div>
+                                                <strong>Blacklist:</strong> Tidak dapat mengajukan hibah di tahun
+                                                berikutnya
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Download Section -->
+                <div class="text-center mt-5" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card" style="max-width: 3000px; margin: 0 auto;">
+                        <div class="card-body">
+                            <h5 class="card-title"><i class="bi bi-download"></i> Unduh Dokumen</h5>
+                            <p class="card-text text-muted">Dokumen lengkap Peraturan Bupati tentang Pedoman Hibah dan
+                                Bantuan Sosial</p>
+                            <a href="{{ asset('docs/perbup.pdf') }}" download class="btn btn-primary btn-lg">
+                                <i class="bi bi-file-pdf ms-2"></i> Download Perbup No. 32 Tahun 2022
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- /Features Section -->
+
+        <!-- Stats Section -->
+        <section id="stats" class="stats section">
+            <div class="container" data-aos="fade-up" data-aos-delay="100">
+                <div class="row gy-4">
+                    <div class="col-lg-3 col-md-6">
+                        <div class="stats-item text-center w-100 h-100">
+                            <span data-purecounter-start="0" data-purecounter-end="232" data-purecounter-duration="1"
+                                class="purecounter"></span>
+                            <p>Proposal diproses</p>
+                        </div>
+                    </div>
+                    <!-- End Stats Item -->
+
+                    <div class="col-lg-3 col-md-6">
+                        <div class="stats-item text-center w-100 h-100">
+                            <span data-purecounter-start="0" data-purecounter-end="521" data-purecounter-duration="1"
+                                class="purecounter"></span>
+                            <p>Proposal direvisi</p>
+                        </div>
+                    </div>
+                    <!-- End Stats Item -->
+
+                    <div class="col-lg-3 col-md-6">
+                        <div class="stats-item text-center w-100 h-100">
+                            <span data-purecounter-start="0" data-purecounter-end="1453" data-purecounter-duration="1"
+                                class="purecounter"></span>
+                            <p>Proposal disetujui</p>
+                        </div>
+                    </div>
+                    <!-- End Stats Item -->
+
+                    <div class="col-lg-3 col-md-6">
+                        <div class="stats-item text-center w-100 h-100">
+                            <span data-purecounter-start="0" data-purecounter-end="32" data-purecounter-duration="1"
+                                class="purecounter"></span>
+                            <p>Proposal ditolak</p>
+                        </div>
+                    </div>
+                    <!-- End Stats Item -->
+                </div>
+            </div>
+        </section>
+        <!-- /Stats Section -->
+
+        <!-- Services Section -->
+        <section id="services" class="services section">
             <!-- Section Title -->
-            <section class="hero-section">
-                <div class="container" data-aos="fade-up">
-                    <h1><i class="bi bi-mosque"></i> Hibah Keagamaan</h1>
-                    <p>Panduan Lengkap Pengajuan Hibah untuk Masjid, Mushola, dan Kegiatan Keagamaan<br>
-                        Kabupaten Kepulauan Meranti</p>
+            <div class="container section-title" data-aos="fade-up">
+                <h2>Pengumuman Hibah</h2>
+                <p>Informasi terbaru mengenai program hibah yang tersedia</p>
+            </div>
+            <!-- End Section Title -->
+
+            <div class="container" data-aos="fade-up" data-aos-delay="100">
+                <!-- Announcement Card -->
+                <div class="announcement-card" data-aos="fade-up" data-aos-delay="150">
+                    <div class="announcement-title">
+                        <i class="bi bi-megaphone-fill"></i>
+                        Pembukaan Program Hibah Tahun 2025
+                    </div>
+                    <div class="announcement-content">
+                        Yayasan dengan bangga mengumumkan pembukaan program hibah untuk tahun 2025. Program ini
+                        ditujukan untuk mendukung berbagai kegiatan sosial, pendidikan, dan pembangunan infrastruktur
+                        yang bermanfaat bagi masyarakat. Kami mengundang seluruh organisasi, lembaga, dan komunitas yang
+                        memenuhi syarat untuk mengajukan proposal hibah sesuai dengan kategori yang tersedia.
+                    </div>
+                    <span class="date-badge">
+                        <i class="bi bi-calendar-event"></i> Diumumkan: 21 Juni 2025
+                    </span>
                 </div>
-            </section>
 
-            <!-- Main Content -->
-            <section class="py-5">
-                <div class="container">
-                    <!-- Navigation Tabs -->
-                    <div class="d-flex justify-content-center">
-                        <ul class="nav nav-tabs" data-aos="fade-up" data-aos-delay="100">
-                            <li class="nav-item">
-                                <a class="nav-link active show" data-bs-toggle="tab" data-bs-target="#syarat-prosedur">
-                                    <h5><i class="bi bi-file-text"></i> Syarat & Prosedur</h5>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" data-bs-toggle="tab" data-bs-target="#dokumen-persyaratan">
-                                    <h5><i class="bi bi-folder"></i> Dokumen Persyaratan</h5>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" data-bs-toggle="tab" data-bs-target="#tahap-seleksi">
-                                    <h5><i class="bi bi-diagram-3"></i> Tahap Seleksi</h5>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" data-bs-toggle="tab" data-bs-target="#pertanggungjawaban">
-                                    <h5><i class="bi bi-clipboard-check"></i> Pertanggungjawaban</h5>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
+                <!-- Schedule Cards -->
+                @php
+                    $activePeriod = \App\Models\SubmissionPeriod::where('status', 'aktif')->first();
+                @endphp
 
-                    <!-- Tab Content -->
-                    <div class="tab-content" data-aos="fade-up" data-aos-delay="200">
-
-                        <!-- Syarat & Prosedur Tab -->
-                        <div class="tab-pane fade active show" id="syarat-prosedur">
-                            <h3 class="section-title">Syarat & Prosedur Pengajuan Hibah Keagamaan</h3>
-
-                            <div class="row">
-                                <div class="col-lg-8 mx-auto">
-                                    <p class="text-center text-muted mb-4">
-                                        Hibah keagamaan meliputi bantuan untuk masjid, mushola, dan kegiatan keagamaan yang
-                                        diajukan melalui Sekretariat Daerah sesuai dengan urusan pemerintahan umum.
-                                    </p>
-
-                                    <div class="highlight-box">
-                                        <h5><i class="bi bi-info-circle"></i> Informasi Penting</h5>
-                                        <p class="mb-2"><strong>Penerima Hibah:</strong> Organisasi keagamaan, pengurus
-                                            masjid/mushola, dan lembaga keagamaan yang memenuhi syarat.</p>
-                                        <p class="mb-0"><strong>Pengelola:</strong> Sekretariat Daerah Kabupaten
-                                            Kepulauan Meranti</p>
-                                    </div>
-
-                                    <div class="card">
-                                        <div class="card-header">
-                                            <h5><i class="bi bi-calendar-event"></i> Jadwal Pengajuan</h5>
-                                        </div>
-                                        <div class="card-body">
-                                            <div class="checklist-item">
-                                                <i class="bi bi-calendar-check"></i>
-                                                <div>
-                                                    <strong>APBD Tahun Berikutnya:</strong><br>
-                                                    Usulan disampaikan paling lambat bulan Juni
-                                                </div>
-                                            </div>
-                                            <div class="checklist-item">
-                                                <i class="bi bi-calendar-plus"></i>
-                                                <div>
-                                                    <strong>Perubahan APBD:</strong><br>
-                                                    Usulan disampaikan paling lambat bulan April tahun berkenaan
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="card">
-                                        <div class="card-header">
-                                            <h5><i class="bi bi-list-check"></i> Ketentuan Umum</h5>
-                                        </div>
-                                        <div class="card-body">
-                                            <div class="checklist-item">
-                                                <i class="bi bi-check-circle"></i>
-                                                <div>
-                                                    <strong>Bentuk Hibah:</strong> Dapat berupa uang, barang, atau jasa
-                                                </div>
-                                            </div>
-                                            <div class="checklist-item">
-                                                <i class="bi bi-check-circle"></i>
-                                                <div>
-                                                    <strong>Tujuan:</strong> Mendukung kegiatan keagamaan dan pembangunan
-                                                    sarana ibadah
-                                                </div>
-                                            </div>
-                                            <div class="checklist-item">
-                                                <i class="bi bi-check-circle"></i>
-                                                <div>
-                                                    <strong>Evaluasi:</strong> Tim evaluasi menilai aspek legalitas,
-                                                    administratif, dan substansi kegiatan
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Dokumen Persyaratan Tab -->
-                        <div class="tab-pane fade" id="dokumen-persyaratan">
-                            <h3 class="section-title">Dokumen Persyaratan Proposal</h3>
-
-                            <div class="requirements-grid">
-                                <div class="requirement-card">
-                                    <h6><i class="bi bi-file-earmark-text"></i> Aspek Legalitas (Pasal 12 ayat 3)</h6>
-                                    <ul class="requirement-list">
-                                        <li><i class="bi bi-dot"></i> Nama Badan/Lembaga Organisasi Pemohon</li>
-                                        <li><i class="bi bi-dot"></i> Akta Pendirian Organisasi</li>
-                                        <li><i class="bi bi-dot"></i> NPWP Organisasi Aktif</li>
-                                        <li><i class="bi bi-dot"></i> Buku Rekening Organisasi</li>
-                                    </ul>
-                                </div>
-
-                                <div class="requirement-card">
-                                    <h6><i class="bi bi-folder"></i> Aspek Administratif (Pasal 12 ayat 4)</h6>
-                                    <ul class="requirement-list">
-                                        <li><i class="bi bi-dot"></i> Proposal Kegiatan/Pembangunan</li>
-                                        <li><i class="bi bi-dot"></i> Rencana Anggaran Biaya (RAB)</li>
-                                        <li><i class="bi bi-dot"></i> Surat Permohonan resmi</li>
-                                        <li><i class="bi bi-dot"></i> Surat Keterangan dari Kelurahan/Desa</li>
-                                    </ul>
-                                </div>
-
-                                <div class="requirement-card">
-                                    <h6><i class="bi bi-camera"></i> Dokumentasi</h6>
-                                    <ul class="requirement-list">
-                                        <li><i class="bi bi-dot"></i> Foto kondisi saat ini (untuk renovasi/pembangunan)
-                                        </li>
-                                        <li><i class="bi bi-dot"></i> Foto kegiatan sebelumnya (untuk kegiatan rutin)</li>
-                                        <li><i class="bi bi-dot"></i> Sketsa/denah bangunan (jika pembangunan)</li>
-                                    </ul>
-                                </div>
-
-                                <div class="requirement-card">
-                                    <h6><i class="bi bi-clipboard-data"></i> Persyaratan Substantif (Pasal 12 ayat 5)</h6>
-                                    <ul class="requirement-list">
-                                        <li><i class="bi bi-dot"></i> Program sesuai dengan tujuan (dijelaskan dalam
-                                            proposal)</li>
-                                        <li><i class="bi bi-dot"></i> Manfaat jelas untuk jamaah (dijelaskan dalam
-                                            proposal)</li>
-                                        <li><i class="bi bi-dot"></i> Timeline pelaksanaan realistis (dijelaskan dalam
-                                            proposal)</li>
-                                    </ul>
-                                </div>
-                            </div>
-
-                            <div class="warning-box">
-                                <h5><i class="bi bi-exclamation-triangle"></i> Catatan Penting</h5>
-                                <p class="mb-2">• Semua dokumen harus asli atau fotokopi yang dilegalisir</p>
-                                <p class="mb-2">• Proposal harus mencakup latar belakang, tujuan, manfaat, dan rencana
-                                    pelaksanaan</p>
-                                <p class="mb-0">• RAB harus detail dan sesuai dengan harga pasar setempat</p>
-                            </div>
-                        </div>
-
-                        <!-- Tahap Seleksi Tab -->
-                        <div class="tab-pane fade" id="tahap-seleksi">
-                            <h3 class="section-title">Tahapan Proses Seleksi</h3>
-
-                            <div class="timeline">
-                                <div class="timeline-item">
-                                    <div class="timeline-marker">1</div>
-                                    <div class="timeline-content">
-                                        <h5>Pengajuan Proposal</h5>
-                                        <p>Pemohon menyerahkan proposal lengkap dengan semua dokumen persyaratan ke
-                                            Sekretariat Daerah Kabupaten Kepulauan Meranti.</p>
-                                        <small class="text-muted">Waktu: Sesuai jadwal pengajuan</small>
-                                    </div>
-                                </div>
-
-                                <div class="timeline-item">
-                                    <div class="timeline-marker">2</div>
-                                    <div class="timeline-content">
-                                        <h5>Verifikasi Administratif</h5>
-                                        <p>Tim verifikasi memeriksa kelengkapan dokumen dan kesesuaian dengan format yang
-                                            ditentukan.</p>
-                                        <small class="text-muted">Waktu: 7-14 hari kerja</small>
-                                    </div>
-                                </div>
-
-                                <div class="timeline-item">
-                                    <div class="timeline-marker">3</div>
-                                    <div class="timeline-content">
-                                        <h5>Evaluasi Tim Penilai</h5>
-                                        <p>Tim evaluasi menilai aspek legalitas, administratif, dan substansi kegiatan
-                                            dengan tingkat kewajaran biaya.</p>
-                                        <small class="text-muted">Waktu: 14-21 hari kerja</small>
-                                    </div>
-                                </div>
-
-                                <div class="timeline-item">
-                                    <div class="timeline-marker">4</div>
-                                    <div class="timeline-content">
-                                        <h5>Verifikasi Lapangan</h5>
-                                        <p>Tim melakukan kunjungan ke lokasi untuk memastikan kondisi riil dan kebutuhan
-                                            hibah.</p>
-                                        <small class="text-muted">Waktu: Sesuai jadwal tim</small>
-                                    </div>
-                                </div>
-
-                                <div class="timeline-item">
-                                    <div class="timeline-marker">5</div>
-                                    <div class="timeline-content">
-                                        <h5>Penetapan Penerima</h5>
-                                        <p>Bupati menetapkan penerima hibah berdasarkan rekomendasi tim evaluasi dan
-                                            ketersediaan anggaran.</p>
-                                        <small class="text-muted">Waktu: Setelah evaluasi selesai</small>
-                                    </div>
-                                </div>
-
-                                <div class="timeline-item">
-                                    <div class="timeline-marker">6</div>
-                                    <div class="timeline-content">
-                                        <h5>Penerbitan NPHD</h5>
-                                        <p>Naskah Perjanjian Hibah Daerah (NPHD) diterbitkan dan ditandatangani oleh kedua
-                                            belah pihak.</p>
-                                        <small class="text-muted">Waktu: Setelah penetapan</small>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="highlight-box">
-                                <h5><i class="bi bi-info-circle"></i> Kriteria Penilaian</h5>
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <p><strong>Aspek Legalitas (25%)</strong></p>
-                                        <ul class="small">
-                                            <li>Kelengkapan dokumen organisasi</li>
-                                            <li>Status hukum pemohon</li>
-                                        </ul>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <p><strong>Aspek Administratif (25%)</strong></p>
-                                        <ul class="small">
-                                            <li>Kelengkapan proposal</li>
-                                            <li>Kewajaran anggaran</li>
-                                        </ul>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <p><strong>Aspek Substansi (35%)</strong></p>
-                                        <ul class="small">
-                                            <li>Manfaat untuk masyarakat</li>
-                                            <li>Kesesuaian dengan program daerah</li>
-                                        </ul>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <p><strong>Aspek Teknis (15%)</strong></p>
-                                        <ul class="small">
-                                            <li>Feasibilitas pelaksanaan</li>
-                                            <li>Timeline realistis</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Pertanggungjawaban Tab -->
-                        <div class="tab-pane fade" id="pertanggungjawaban">
-                            <h3 class="section-title">Kewajiban Pertanggungjawaban</h3>
-
-                            <div class="row">
-                                <div class="col-lg-8 mx-auto">
-                                    <p class="text-center text-muted mb-4">
-                                        Penerima hibah bertanggung jawab secara formil dan materil atas penggunaan hibah
-                                        yang diterima sesuai dengan ketentuan yang berlaku.
-                                    </p>
-
-                                    <div class="card">
-                                        <div class="card-header">
-                                            <h5><i class="bi bi-file-earmark-check"></i> Dokumen Pertanggungjawaban</h5>
-                                        </div>
-                                        <div class="card-body">
-                                            <div class="checklist-item">
-                                                <i class="bi bi-file-text"></i>
-                                                <div>
-                                                    <strong>Laporan Penggunaan Hibah:</strong><br>
-                                                    Laporan rinci penggunaan hibah kepada Bupati melalui Sekretariat Daerah
-                                                </div>
-                                            </div>
-                                            <div class="checklist-item">
-                                                <i class="bi bi-file-earmark-text"></i>
-                                                <div>
-                                                    <strong>Surat Pertanggungjawaban:</strong><br>
-                                                    Surat pernyataan bahwa hibah telah digunakan sesuai dengan NPHD
-                                                </div>
-                                            </div>
-                                            <div class="checklist-item">
-                                                <i class="bi bi-receipt"></i>
-                                                <div>
-                                                    <strong>Bukti Pengeluaran:</strong><br>
-                                                    Kuitansi, nota, dan bukti pengeluaran yang lengkap dan sah
-                                                </div>
-                                            </div>
-                                            <div class="checklist-item">
-                                                <i class="bi bi-camera"></i>
-                                                <div>
-                                                    <strong>Dokumentasi Kegiatan:</strong><br>
-                                                    Foto-foto pelaksanaan kegiatan atau hasil pembangunan
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="warning-box">
-                                        <h5><i class="bi bi-clock"></i> Batas Waktu Penting</h5>
-                                        <p class="mb-2"><strong>Pertanggungjawaban:</strong> Maksimal 30 hari setelah
-                                            hibah diterima</p>
-                                        <p class="mb-0"><strong>Pengembalian:</strong> Hibah yang tidak digunakan sesuai
-                                            tujuan wajib dikembalikan</p>
-                                    </div>
-
-                                    <div class="card">
-                                        <div class="card-header">
-                                            <h5><i class="bi bi-exclamation-triangle"></i> Sanksi</h5>
-                                        </div>
-                                        <div class="card-body">
-                                            <p class="mb-3">Penerima hibah yang tidak memenuhi kewajiban dapat dikenakan
-                                                sanksi:</p>
-                                            <div class="checklist-item">
-                                                <i class="bi bi-x-circle"></i>
-                                                <div>
-                                                    <strong>Penghentian Hibah:</strong> Pencairan hibah dapat dihentikan
-                                                </div>
-                                            </div>
-                                            <div class="checklist-item">
-                                                <i class="bi bi-arrow-return-left"></i>
-                                                <div>
-                                                    <strong>Pengembalian Dana:</strong> Wajib mengembalikan hibah yang telah
-                                                    diterima
-                                                </div>
-                                            </div>
-                                            <div class="checklist-item">
-                                                <i class="bi bi-ban"></i>
-                                                <div>
-                                                    <strong>Blacklist:</strong> Tidak dapat mengajukan hibah di tahun
-                                                    berikutnya
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Download Section -->
-                    <div class="text-center mt-5" data-aos="fade-up" data-aos-delay="300">
-                        <div class="card" style="max-width: 3000px; margin: 0 auto;">
-                            <div class="card-body">
-                                <h5 class="card-title"><i class="bi bi-download"></i> Unduh Dokumen</h5>
-                                <p class="card-text text-muted">Dokumen lengkap Peraturan Bupati tentang Pedoman Hibah dan
-                                    Bantuan Sosial</p>
-                                <a href="{{ asset('docs/perbup.pdf') }}" download class="btn btn-primary btn-lg">
-                                    <i class="bi bi-file-pdf ms-2"></i> Download Perbup No. 32 Tahun 2022
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <!-- /Features Section -->
-
-            <!-- Stats Section -->
-            <section id="stats" class="stats section">
-                <div class="container" data-aos="fade-up" data-aos-delay="100">
-                    <div class="row gy-4">
-                        <div class="col-lg-3 col-md-6">
-                            <div class="stats-item text-center w-100 h-100">
-                                <span data-purecounter-start="0" data-purecounter-end="232" data-purecounter-duration="1"
-                                    class="purecounter"></span>
-                                <p>Proposal diproses</p>
-                            </div>
-                        </div>
-                        <!-- End Stats Item -->
-
-                        <div class="col-lg-3 col-md-6">
-                            <div class="stats-item text-center w-100 h-100">
-                                <span data-purecounter-start="0" data-purecounter-end="521" data-purecounter-duration="1"
-                                    class="purecounter"></span>
-                                <p>Proposal direvisi</p>
-                            </div>
-                        </div>
-                        <!-- End Stats Item -->
-
-                        <div class="col-lg-3 col-md-6">
-                            <div class="stats-item text-center w-100 h-100">
-                                <span data-purecounter-start="0" data-purecounter-end="1453"
-                                    data-purecounter-duration="1" class="purecounter"></span>
-                                <p>Proposal disetujui</p>
-                            </div>
-                        </div>
-                        <!-- End Stats Item -->
-
-                        <div class="col-lg-3 col-md-6">
-                            <div class="stats-item text-center w-100 h-100">
-                                <span data-purecounter-start="0" data-purecounter-end="32" data-purecounter-duration="1"
-                                    class="purecounter"></span>
-                                <p>Proposal ditolak</p>
-                            </div>
-                        </div>
-                        <!-- End Stats Item -->
-                    </div>
-                </div>
-            </section>
-            <!-- /Stats Section -->
-
-            <!-- Services Section -->
-            <section id="services" class="services section light-background">
-                <!-- Section Title -->
-                <div class="container section-title" data-aos="fade-up">
-                    <h2>Pengumuman Hibah</h2>
-                    <p>Informasi terbaru mengenai program hibah yang tersedia</p>
-                </div>
-                <!-- End Section Title -->
-
-                <div class="container" data-aos="fade-up" data-aos-delay="100">
-                    <!-- Announcement Card -->
-                    <div class="announcement-card" data-aos="fade-up" data-aos-delay="150">
-                        <div class="announcement-title">
-                            <i class="bi bi-megaphone-fill"></i>
-                            Pembukaan Program Hibah Tahun 2025
-                        </div>
-                        <div class="announcement-content">
-                            Yayasan dengan bangga mengumumkan pembukaan program hibah untuk tahun 2025. Program ini
-                            ditujukan untuk mendukung berbagai kegiatan sosial, pendidikan, dan pembangunan infrastruktur
-                            yang bermanfaat bagi masyarakat. Kami mengundang seluruh organisasi, lembaga, dan komunitas yang
-                            memenuhi syarat untuk mengajukan proposal hibah sesuai dengan kategori yang tersedia.
-                        </div>
-                        <span class="date-badge">
-                            <i class="bi bi-calendar-event"></i> Diumumkan: 21 Juni 2025
-                        </span>
-                    </div>
-
-                    <!-- Schedule Cards -->
+                @if ($activePeriod)
                     <div class="row g-4 mb-5" data-aos="fade-up" data-aos-delay="200">
                         <div class="col-lg-6">
                             <div class="schedule-card">
@@ -1852,10 +1873,12 @@
                                     <i class="bi bi-calendar-plus"></i>
                                 </div>
                                 <div class="schedule-title">Pembukaan Pendaftaran</div>
-                                <div class="schedule-date">1 Juli 2025</div>
+                                <div class="schedule-date">
+                                    {{ \Carbon\Carbon::parse($activePeriod->start_date)->translatedFormat('d F Y') }}</div>
                                 <div class="schedule-time">Pukul 08:00 WIB</div>
-                                <p class="mt-3 text-muted">Pendaftaran dan pengajuan proposal hibah dibuka untuk semua
-                                    kategori yang tersedia.</p>
+                                <p class="mt-3 text-muted">
+                                    Pendaftaran dan pengajuan proposal hibah dibuka untuk semua kategori yang tersedia.
+                                </p>
                             </div>
                         </div>
 
@@ -1865,620 +1888,619 @@
                                     <i class="bi bi-calendar-x"></i>
                                 </div>
                                 <div class="schedule-title">Penutupan Pengajuan</div>
-                                <div class="schedule-date">31 Agustus 2025</div>
+                                <div class="schedule-date">
+                                    {{ \Carbon\Carbon::parse($activePeriod->end_date)->translatedFormat('d F Y') }}</div>
                                 <div class="schedule-time">Pukul 17:00 WIB</div>
-                                <p class="mt-3 text-muted">Batas akhir pengajuan proposal hibah. Tidak ada perpanjangan
-                                    waktu.</p>
+                                <p class="mt-3 text-muted">
+                                    Batas akhir pengajuan proposal hibah. Tidak ada perpanjangan waktu.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                @else
+                    <div class="alert alert-warning text-center mt-4">
+                        Belum ada periode pendaftaran aktif saat ini.
+                    </div>
+                @endif
+            </div>
+        </section>
+
+        {{-- <section class="news-section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Berita Terkini</h2>
+                    <p>Informasi terbaru dan update kegiatan terkini</p>
+                </div>
+
+                <div class="news-grid">
+                    <div class="row g-4">
+                        <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+                            <div class="news-card">
+                                <img src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=400&h=200&fit=crop"
+                                    alt="Berita 1" class="news-image">
+                                <div class="news-content">
+                                    <div class="news-date">
+                                        <i class="bi bi-calendar"></i>
+                                        20 Juni 2025
+                                    </div>
+                                    <h3 class="news-title">Pembangunan Masjid Al-Barokah Telah Selesai</h3>
+                                    <p class="news-description">Alhamdulillah, pembangunan Masjid Al-Barokah di
+                                        Desa Sungai Pinang telah selesai dan siap digunakan untuk kegiatan
+                                        ibadah masyarakat. Masjid ini dapat menampung hingga 300 jamaah.</p>
+                                    <a href="#" class="read-more">Selengkapnya <i
+                                            class="bi bi-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+                            <div class="news-card">
+                                <img src="https://images.unsplash.com/photo-1556740758-90de374c12ad?w=400&h=200&fit=crop"
+                                    alt="Berita 2" class="news-image">
+                                <div class="news-content">
+                                    <div class="news-date">
+                                        <i class="bi bi-calendar"></i>
+                                        18 Juni 2025
+                                    </div>
+                                    <h3 class="news-title">Program Bantuan UMKM Capai Target 100 Penerima</h3>
+                                    <p class="news-description">Program bantuan modal usaha mikro, kecil dan
+                                        menengah (UMKM) telah berhasil menyalurkan bantuan kepada 100 pelaku
+                                        usaha di berbagai desa. Bantuan berupa modal kerja dan pelatihan
+                                        manajemen usaha.</p>
+                                    <a href="#" class="read-more">Selengkapnya <i
+                                            class="bi bi-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6" data-aos="fade-up" data-aos-delay="300">
+                            <div class="news-card">
+                                <img src="https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=400&h=200&fit=crop"
+                                    alt="Berita 3" class="news-image">
+                                <div class="news-content">
+                                    <div class="news-date">
+                                        <i class="bi bi-calendar"></i>
+                                        15 Juni 2025
+                                    </div>
+                                    <h3 class="news-title">Perpustakaan Desa Mendapat Bantuan 1000 Buku</h3>
+                                    <p class="news-description">Perpustakaan Desa Rimbo Panjang mendapat
+                                        bantuan 1000 buku bacaan dan referensi untuk meningkatkan minat baca
+                                        masyarakat, khususnya anak-anak dan remaja di desa tersebut.</p>
+                                    <a href="#" class="read-more">Selengkapnya <i
+                                            class="bi bi-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6" data-aos="fade-up" data-aos-delay="400">
+                            <div class="news-card">
+                                <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=400&h=200&fit=crop"
+                                    alt="Berita 4" class="news-image">
+                                <div class="news-content">
+                                    <div class="news-date">
+                                        <i class="bi bi-calendar"></i>
+                                        12 Juni 2025
+                                    </div>
+                                    <h3 class="news-title">Sumur Bor Baru Atasi Krisis Air Bersih</h3>
+                                    <p class="news-description">Pembangunan sumur bor di Desa Tanjung Harapan
+                                        telah selesai dan berhasil mengatasi masalah kekurangan air bersih.
+                                        Debit air mencapai 50 liter per menit dan dapat melayani 200 kepala
+                                        keluarga.</p>
+                                    <a href="#" class="read-more">Selengkapnya <i
+                                            class="bi bi-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide Navigation -->
+                <div class="slide-navigation" data-aos="fade-up" data-aos-delay="500">
+                    <div class="slide-btn" id="prevBtn">
+                        <i class="bi bi-chevron-left"></i>
+                    </div>
+
+                    <div class="slide-indicators">
+                        <div class="slide-dot active" data-slide="0"></div>
+                        <div class="slide-dot" data-slide="1"></div>
+                        <div class="slide-dot" data-slide="2"></div>
+                    </div>
+
+                    <div class="slide-info">
+                        <span id="currentSlide">1</span> / <span id="totalSlides">3</span>
+                    </div>
+
+                    <div class="slide-btn" id="nextBtn">
+                        <i class="bi bi-chevron-right"></i>
+                    </div>
+                </div>
+            </div>
+        </section> --}}
+
+        <!-- /Services Section -->
+        <section class="requirements-section" id="syarat">
+            <div class="container">
+                <div class="section-header" data-aos="fade-up">
+                    <h2 class="section-title">Persyaratan Dokumen Hibah</h2>
+                    <p class="section-subtitle">
+                        Silakan lihat atau download contoh dokumen pendukung pengajuan permohonan hibah di bawah
+                        ini
+                    </p>
+                </div>
+
+                <div class="documents-grid">
+                    <!-- Surat Permohonan Walikota -->
+                    <div class="document-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="document-icon">
+                            <div class="clipboard">
+                                <div class="paper">
+                                    <i class="bi bi-person-badge paper-icon"></i>
+                                    <div class="paper-text">
+                                        Yth.<br>
+                                        Bapak<br>
+                                        Walikota
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <h3 class="document-title">Surat Permohonan Walikota</h3>
+                        <p class="document-description">
+                            Template surat permohonan hibah yang ditujukan kepada Walikota sebagai dokumen
+                            formal pengajuan
+                        </p>
+                        <a href="{{ asset('docs/perbup.pdf') }}" class="download-btn">
+                            <i class="bi bi-download"></i>
+                            Download Template
+                        </a>
+                    </div>
+
+                    <!-- Proposal -->
+                    <div class="document-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="document-icon">
+                            <div class="clipboard">
+                                <div class="paper">
+                                    <i class="bi bi-file-earmark-text paper-icon"></i>
+                                    <div class="paper-text">
+                                        PRO<br>
+                                        posal
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <h3 class="document-title">Proposal</h3>
+                        <p class="document-description">
+                            Format proposal kegiatan yang berisi latar belakang, tujuan, rencana kegiatan, dan
+                            manfaat program
+                        </p>
+                        <a href="{{ asset('docs/proposal.pdf') }}" class="download-btn">
+                            <i class="bi bi-download"></i>
+                            Download Template
+                        </a>
+                    </div>
+
+                    <!-- RAB -->
+                    <div class="document-card" data-aos="fade-up" data-aos-delay="300">
+                        <div class="document-icon">
+                            <div class="clipboard">
+                                <div class="paper">
+                                    <i class="bi bi-calculator paper-icon"></i>
+                                    <div class="paper-text">
+                                        RAB
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <h3 class="document-title">RAB</h3>
+                        <p class="document-description">
+                            Rencana Anggaran Biaya yang detail dan terperinci untuk setiap item kegiatan yang
+                            akan dilaksanakan
+                        </p>
+                        <a href="{{ asset('docs/perbup.pdf') }}" class="download-btn">
+                            <i class="bi bi-download"></i>
+                            Download Template
+                        </a>
+                    </div>
+
+                    <!-- Domisili Dari Lurah -->
+                    <div class="document-card" data-aos="fade-up" data-aos-delay="400">
+                        <div class="document-icon">
+                            <div class="clipboard">
+                                <div class="paper">
+                                    <i class="bi bi-geo-alt paper-icon"></i>
+                                    <div class="paper-text">
+                                        DOMISILI<br>
+                                        DARI<br>
+                                        LURAH
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <h3 class="document-title">Domisili Dari Lurah</h3>
+                        <p class="document-description">
+                            Surat keterangan domisili dari Lurah setempat sebagai bukti keberadaan organisasi di
+                            wilayah tersebut
+                        </p>
+                        <a href="{{ asset('docs/perbup.pdf') }}" class="download-btn">
+                            <i class="bi bi-download"></i>
+                            Download Template
+                        </a>
+                    </div>
+
+                    <!-- Surat Keterangan -->
+                    <div class="document-card" data-aos="fade-up" data-aos-delay="500">
+                        <div class="document-icon">
+                            <div class="clipboard">
+                                <div class="paper">
+                                    <i class="bi bi-file-earmark-check paper-icon"></i>
+                                    <div class="paper-text">
+                                        Akte Pendirian<br>
+                                        Kementerian<br>
+                                        Kemenko
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <h3 class="document-title">Akte Pendirian</h3>
+                        <p class="document-description">
+                            Akte Pendirian dari Kementerian terkait atau instansi berwenang sebagai legalitas
+                            organisasi
+                        </p>
+                        <a href="{{ asset('docs/akte-pendirian.pdf') }}" class="download-btn">
+                            <i class="bi bi-download"></i>
+                            Download Template
+                        </a>
+                    </div>
+
+                    <!-- Contoh File KTP -->
+                    <div class="document-card" data-aos="fade-up" data-aos-delay="600">
+                        <div class="document-icon">
+                            <div class="clipboard">
+                                <div class="paper">
+                                    <i class="bi bi-credit-card paper-icon"></i>
+                                    <div class="paper-text">
+                                        KTP<br>
+                                        Ketua<br>
+                                        Sekretaris<br>
+                                        Bendahara
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <h3 class="document-title">Contoh File KTP</h3>
+                        <p class="document-description">
+                            Template pengumpulan KTP Ketua, Sekretaris, dan Bendahara organisasi sebagai
+                            identitas pengurus
+                        </p>
+                        <a href="{{ asset('docs/perbup.pdf') }}" class="download-btn">
+                            <i class="bi bi-download"></i>
+                            Download Template
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Additional Information -->
+                <div class="additional-info" data-aos="fade-up" data-aos-delay="700">
+                    <h3 class="info-title">Informasi Penting</h3>
+                    <ul class="info-list">
+                        <li>
+                            <i class="bi bi-check-circle-fill"></i>
+                            <span>Semua dokumen harus dalam format PDF dengan ukuran maksimal 5MB per
+                                file</span>
+                        </li>
+                        <li>
+                            <i class="bi bi-check-circle-fill"></i>
+                            <span>Dokumen yang diunggah harus jelas dan terbaca dengan baik</span>
+                        </li>
+                        <li>
+                            <i class="bi bi-check-circle-fill"></i>
+                            <span>Pastikan semua dokumen telah ditandatangani dan distempel resmi</span>
+                        </li>
+                        <li>
+                            <i class="bi bi-check-circle-fill"></i>
+                            <span>Kelengkapan dokumen akan mempengaruhi proses evaluasi proposal</span>
+                        </li>
+                        <li>
+                            <i class="bi bi-check-circle-fill"></i>
+                            <span>Dokumen yang tidak sesuai template akan dikembalikan untuk diperbaiki</span>
+                        </li>
+                    </ul>
+
+                    <div class="contact-card">
+                        <h4>Catatan</h4>
+                        <p>Contoh dokumen pendukung di atas hanya sebagai acuan atau gambaran untuk mengetahui
+                            bagaimana format dokumen pendukung yang dimaksud dalam sistem ini. Selayaknya
+                            contoh, untuk beberapa dokumen di atas silakan ditiru, juga dipersilakan menggunakan
+                            format sendiri sesuai dengan ketentuan.
+                            Utamanya adalah terpenuhinya dokumen-dokumen yang disyaratkan dalam pengajuan
+                            permohonan hibah keagamaan.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact section light-background pt-5 pb-5">
+            <!-- Section Title -->
+            <div class="container section-title" data-aos="fade-up">
+                <h2>Kontak</h2>
+                <p>
+                    Masukkan dan pertanyaan anda yang lain bisa salurkan disini
+                </p>
+            </div>
+            <!-- End Section Title -->
+
+            <div class="container" data-aos="fade-up" data-aos-delay="100">
+                <div class="row g-4 g-lg-5">
+                    <div class="col-lg-5">
+                        <div class="info-box" data-aos="fade-up" data-aos-delay="200">
+                            <h3>Info Lanjut</h3>
+                            <p>
+                                Jika Anda memiliki pertanyaan atau membutuhkan bantuan terkait aplikasi
+                                pengajuan,
+                                silakan hubungi kami melalui informasi di bawah ini.
+                            </p>
+
+                            <div class="info-item" data-aos="fade-up" data-aos-delay="300">
+                                <div class="icon-box">
+                                    <i class="bi bi-geo-alt"></i>
+                                </div>
+                                <div class="content">
+                                    <h4>Lokasi</h4>
+                                    <p>Kepulauan Meranti</p>
+                                    <p>Meranti, Selatpanjang</p>
+                                </div>
+                            </div>
+
+                            <div class="info-item" data-aos="fade-up" data-aos-delay="400">
+                                <div class="icon-box">
+                                    <i class="bi bi-telephone"></i>
+                                </div>
+                                <div class="content">
+                                    <h4>Phone Number</h4>
+                                    <p>+1 5589 55488 55</p>
+                                </div>
+                            </div>
+
+                            <div class="info-item" data-aos="fade-up" data-aos-delay="500">
+                                <div class="icon-box">
+                                    <i class="bi bi-envelope"></i>
+                                </div>
+                                <div class="content">
+                                    <h4>Email Address</h4>
+                                    <p>info@meranti.com</p>
+                                </div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Category Grid -->
-                    <section class="news-section">
-                        <div class="container">
-                            <div class="section-title">
-                                <h2>Berita Terkini</h2>
-                                <p>Informasi terbaru dan update kegiatan terkini</p>
-                            </div>
-
-                            <div class="news-grid">
-                                <div class="row g-4">
-                                    <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-                                        <div class="news-card">
-                                            <img src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=400&h=200&fit=crop"
-                                                alt="Berita 1" class="news-image">
-                                            <div class="news-content">
-                                                <div class="news-date">
-                                                    <i class="bi bi-calendar"></i>
-                                                    20 Juni 2025
-                                                </div>
-                                                <h3 class="news-title">Pembangunan Masjid Al-Barokah Telah Selesai</h3>
-                                                <p class="news-description">Alhamdulillah, pembangunan Masjid Al-Barokah di
-                                                    Desa Sungai Pinang telah selesai dan siap digunakan untuk kegiatan
-                                                    ibadah masyarakat. Masjid ini dapat menampung hingga 300 jamaah.</p>
-                                                <a href="#" class="read-more">Selengkapnya <i
-                                                        class="bi bi-arrow-right"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
-                                        <div class="news-card">
-                                            <img src="https://images.unsplash.com/photo-1556740758-90de374c12ad?w=400&h=200&fit=crop"
-                                                alt="Berita 2" class="news-image">
-                                            <div class="news-content">
-                                                <div class="news-date">
-                                                    <i class="bi bi-calendar"></i>
-                                                    18 Juni 2025
-                                                </div>
-                                                <h3 class="news-title">Program Bantuan UMKM Capai Target 100 Penerima</h3>
-                                                <p class="news-description">Program bantuan modal usaha mikro, kecil dan
-                                                    menengah (UMKM) telah berhasil menyalurkan bantuan kepada 100 pelaku
-                                                    usaha di berbagai desa. Bantuan berupa modal kerja dan pelatihan
-                                                    manajemen usaha.</p>
-                                                <a href="#" class="read-more">Selengkapnya <i
-                                                        class="bi bi-arrow-right"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-lg-6" data-aos="fade-up" data-aos-delay="300">
-                                        <div class="news-card">
-                                            <img src="https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=400&h=200&fit=crop"
-                                                alt="Berita 3" class="news-image">
-                                            <div class="news-content">
-                                                <div class="news-date">
-                                                    <i class="bi bi-calendar"></i>
-                                                    15 Juni 2025
-                                                </div>
-                                                <h3 class="news-title">Perpustakaan Desa Mendapat Bantuan 1000 Buku</h3>
-                                                <p class="news-description">Perpustakaan Desa Rimbo Panjang mendapat
-                                                    bantuan 1000 buku bacaan dan referensi untuk meningkatkan minat baca
-                                                    masyarakat, khususnya anak-anak dan remaja di desa tersebut.</p>
-                                                <a href="#" class="read-more">Selengkapnya <i
-                                                        class="bi bi-arrow-right"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-lg-6" data-aos="fade-up" data-aos-delay="400">
-                                        <div class="news-card">
-                                            <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=400&h=200&fit=crop"
-                                                alt="Berita 4" class="news-image">
-                                            <div class="news-content">
-                                                <div class="news-date">
-                                                    <i class="bi bi-calendar"></i>
-                                                    12 Juni 2025
-                                                </div>
-                                                <h3 class="news-title">Sumur Bor Baru Atasi Krisis Air Bersih</h3>
-                                                <p class="news-description">Pembangunan sumur bor di Desa Tanjung Harapan
-                                                    telah selesai dan berhasil mengatasi masalah kekurangan air bersih.
-                                                    Debit air mencapai 50 liter per menit dan dapat melayani 200 kepala
-                                                    keluarga.</p>
-                                                <a href="#" class="read-more">Selengkapnya <i
-                                                        class="bi bi-arrow-right"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Slide Navigation -->
-                            <div class="slide-navigation" data-aos="fade-up" data-aos-delay="500">
-                                <div class="slide-btn" id="prevBtn">
-                                    <i class="bi bi-chevron-left"></i>
-                                </div>
-
-                                <div class="slide-indicators">
-                                    <div class="slide-dot active" data-slide="0"></div>
-                                    <div class="slide-dot" data-slide="1"></div>
-                                    <div class="slide-dot" data-slide="2"></div>
-                                </div>
-
-                                <div class="slide-info">
-                                    <span id="currentSlide">1</span> / <span id="totalSlides">3</span>
-                                </div>
-
-                                <div class="slide-btn" id="nextBtn">
-                                    <i class="bi bi-chevron-right"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-                    <!-- /Services Section -->
-                    <section class="requirements-section">
-
-                        <div class="container">
-                            <div class="section-header" data-aos="fade-up">
-                                <h2 class="section-title">Persyaratan Dokumen Hibah</h2>
-                                <p class="section-subtitle">
-                                    Silakan lihat atau download contoh dokumen pendukung pengajuan permohonan hibah di bawah
-                                    ini
-                                </p>
-                            </div>
-
-                            <div class="documents-grid">
-                                <!-- Surat Permohonan Walikota -->
-                                <div class="document-card" data-aos="fade-up" data-aos-delay="100">
-                                    <div class="document-icon">
-                                        <div class="clipboard">
-                                            <div class="paper">
-                                                <i class="bi bi-person-badge paper-icon"></i>
-                                                <div class="paper-text">
-                                                    Yth.<br>
-                                                    Bapak<br>
-                                                    Walikota
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <h3 class="document-title">Surat Permohonan Walikota</h3>
-                                    <p class="document-description">
-                                        Template surat permohonan hibah yang ditujukan kepada Walikota sebagai dokumen
-                                        formal pengajuan
-                                    </p>
-                                    <a href="{{ asset('docs/perbup.pdf') }}" class="download-btn">
-                                        <i class="bi bi-download"></i>
-                                        Download Template
-                                    </a>
-                                </div>
-
-                                <!-- Proposal -->
-                                <div class="document-card" data-aos="fade-up" data-aos-delay="200">
-                                    <div class="document-icon">
-                                        <div class="clipboard">
-                                            <div class="paper">
-                                                <i class="bi bi-file-earmark-text paper-icon"></i>
-                                                <div class="paper-text">
-                                                    PRO<br>
-                                                    posal
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <h3 class="document-title">Proposal</h3>
-                                    <p class="document-description">
-                                        Format proposal kegiatan yang berisi latar belakang, tujuan, rencana kegiatan, dan
-                                        manfaat program
-                                    </p>
-                                    <a href="{{ asset('docs/proposal.pdf') }}" class="download-btn">
-                                        <i class="bi bi-download"></i>
-                                        Download Template
-                                    </a>
-                                </div>
-
-                                <!-- RAB -->
-                                <div class="document-card" data-aos="fade-up" data-aos-delay="300">
-                                    <div class="document-icon">
-                                        <div class="clipboard">
-                                            <div class="paper">
-                                                <i class="bi bi-calculator paper-icon"></i>
-                                                <div class="paper-text">
-                                                    RAB
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <h3 class="document-title">RAB</h3>
-                                    <p class="document-description">
-                                        Rencana Anggaran Biaya yang detail dan terperinci untuk setiap item kegiatan yang
-                                        akan dilaksanakan
-                                    </p>
-                                    <a href="{{ asset('docs/perbup.pdf') }}" class="download-btn">
-                                        <i class="bi bi-download"></i>
-                                        Download Template
-                                    </a>
-                                </div>
-
-                                <!-- Domisili Dari Lurah -->
-                                <div class="document-card" data-aos="fade-up" data-aos-delay="400">
-                                    <div class="document-icon">
-                                        <div class="clipboard">
-                                            <div class="paper">
-                                                <i class="bi bi-geo-alt paper-icon"></i>
-                                                <div class="paper-text">
-                                                    DOMISILI<br>
-                                                    DARI<br>
-                                                    LURAH
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <h3 class="document-title">Domisili Dari Lurah</h3>
-                                    <p class="document-description">
-                                        Surat keterangan domisili dari Lurah setempat sebagai bukti keberadaan organisasi di
-                                        wilayah tersebut
-                                    </p>
-                                    <a href="{{ asset('docs/perbup.pdf') }}" class="download-btn">
-                                        <i class="bi bi-download"></i>
-                                        Download Template
-                                    </a>
-                                </div>
-
-                                <!-- Surat Keterangan -->
-                                <div class="document-card" data-aos="fade-up" data-aos-delay="500">
-                                    <div class="document-icon">
-                                        <div class="clipboard">
-                                            <div class="paper">
-                                                <i class="bi bi-file-earmark-check paper-icon"></i>
-                                                <div class="paper-text">
-                                                    Akte Pendirian<br>
-                                                    Kementerian<br>
-                                                    Kemenko
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <h3 class="document-title">Akte Pendirian</h3>
-                                    <p class="document-description">
-                                        Akte Pendirian dari Kementerian terkait atau instansi berwenang sebagai legalitas
-                                        organisasi
-                                    </p>
-                                    <a href="{{ asset('docs/akte-pendirian.pdf') }}" class="download-btn">
-                                        <i class="bi bi-download"></i>
-                                        Download Template
-                                    </a>
-                                </div>
-
-                                <!-- Contoh File KTP -->
-                                <div class="document-card" data-aos="fade-up" data-aos-delay="600">
-                                    <div class="document-icon">
-                                        <div class="clipboard">
-                                            <div class="paper">
-                                                <i class="bi bi-credit-card paper-icon"></i>
-                                                <div class="paper-text">
-                                                    KTP<br>
-                                                    Ketua<br>
-                                                    Sekretaris<br>
-                                                    Bendahara
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <h3 class="document-title">Contoh File KTP</h3>
-                                    <p class="document-description">
-                                        Template pengumpulan KTP Ketua, Sekretaris, dan Bendahara organisasi sebagai
-                                        identitas pengurus
-                                    </p>
-                                    <a href="{{ asset('docs/perbup.pdf') }}" class="download-btn">
-                                        <i class="bi bi-download"></i>
-                                        Download Template
-                                    </a>
-                                </div>
-                            </div>
-
-                            <!-- Additional Information -->
-                            <div class="additional-info" data-aos="fade-up" data-aos-delay="700">
-                                <h3 class="info-title">Informasi Penting</h3>
-                                <ul class="info-list">
-                                    <li>
-                                        <i class="bi bi-check-circle-fill"></i>
-                                        <span>Semua dokumen harus dalam format PDF dengan ukuran maksimal 5MB per
-                                            file</span>
-                                    </li>
-                                    <li>
-                                        <i class="bi bi-check-circle-fill"></i>
-                                        <span>Dokumen yang diunggah harus jelas dan terbaca dengan baik</span>
-                                    </li>
-                                    <li>
-                                        <i class="bi bi-check-circle-fill"></i>
-                                        <span>Pastikan semua dokumen telah ditandatangani dan distempel resmi</span>
-                                    </li>
-                                    <li>
-                                        <i class="bi bi-check-circle-fill"></i>
-                                        <span>Kelengkapan dokumen akan mempengaruhi proses evaluasi proposal</span>
-                                    </li>
-                                    <li>
-                                        <i class="bi bi-check-circle-fill"></i>
-                                        <span>Dokumen yang tidak sesuai template akan dikembalikan untuk diperbaiki</span>
-                                    </li>
-                                </ul>
-
-                                <div class="contact-card">
-                                    <h4>Catatan</h4>
-                                    <p>Contoh dokumen pendukung di atas hanya sebagai acuan atau gambaran untuk mengetahui
-                                        bagaimana format dokumen pendukung yang dimaksud dalam sistem ini. Selayaknya
-                                        contoh, untuk beberapa dokumen di atas silakan ditiru, juga dipersilakan menggunakan
-                                        format sendiri sesuai dengan ketentuan.
-                                        Utamanya adalah terpenuhinya dokumen-dokumen yang disyaratkan dalam pengajuan
-                                        permohonan hibah keagamaan.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-
-                    <!-- Contact Section -->
-                    <section id="contact" class="contact section light-background">
-                        <!-- Section Title -->
-                        <div class="container section-title" data-aos="fade-up">
-                            <h2>Kontak</h2>
+                    <div class="col-lg-7">
+                        <div class="contact-form" data-aos="fade-up" data-aos-delay="300">
+                            <h3>Kontak</h3>
                             <p>
-                                Masukkan dan pertanyaan anda yang lain bisa salurkan disini
+                                Jika Anda memiliki pertanyaan atau membutuhkan bantuan terkait aplikasi
+                                pengajuan,
+                                silakan hubungi kami melalui informasi di bawah ini.
                             </p>
-                        </div>
-                        <!-- End Section Title -->
+                            <form action="{{ route('contact.submit') }}" method="POST" class="php-email-form"
+                                data-aos="fade-up" data-aos-delay="200">
+                                @csrf
+                                <div class="row gy-4">
+                                    <div class="col-md-6">
+                                        <input type="text" name="name" class="form-control" placeholder="Nama"
+                                            required="" />
+                                    </div>
 
-                        <div class="container" data-aos="fade-up" data-aos-delay="100">
-                            <div class="row g-4 g-lg-5">
-                                <div class="col-lg-5">
-                                    <div class="info-box" data-aos="fade-up" data-aos-delay="200">
-                                        <h3>Info Lanjut</h3>
-                                        <p>
-                                            Jika Anda memiliki pertanyaan atau membutuhkan bantuan terkait aplikasi
-                                            pengajuan,
-                                            silakan hubungi kami melalui informasi di bawah ini.
-                                        </p>
+                                    <div class="col-md-6">
+                                        <input type="email" class="form-control" name="email" placeholder="Email"
+                                            required="" />
+                                    </div>
 
-                                        <div class="info-item" data-aos="fade-up" data-aos-delay="300">
-                                            <div class="icon-box">
-                                                <i class="bi bi-geo-alt"></i>
-                                            </div>
-                                            <div class="content">
-                                                <h4>Lokasi</h4>
-                                                <p>Kepulauan Meranti</p>
-                                                <p>Meranti, Selatpanjang</p>
-                                            </div>
+                                    <div class="col-12">
+                                        <input type="text" class="form-control" name="subject" placeholder="Subjek"
+                                            required="" />
+                                    </div>
+
+                                    <div class="col-12">
+                                        <textarea class="form-control" name="message" rows="6" placeholder="Pesan" required=""></textarea>
+                                    </div>
+
+                                    <div class="col-12 text-center">
+                                        <div class="loading">Loading</div>
+                                        <div class="error-message"></div>
+                                        <div class="sent-message">
+                                            Your message has been sent.
+                                            Thank you!
                                         </div>
-
-                                        <div class="info-item" data-aos="fade-up" data-aos-delay="400">
-                                            <div class="icon-box">
-                                                <i class="bi bi-telephone"></i>
-                                            </div>
-                                            <div class="content">
-                                                <h4>Phone Number</h4>
-                                                <p>+1 5589 55488 55</p>
-                                            </div>
-                                        </div>
-
-                                        <div class="info-item" data-aos="fade-up" data-aos-delay="500">
-                                            <div class="icon-box">
-                                                <i class="bi bi-envelope"></i>
-                                            </div>
-                                            <div class="content">
-                                                <h4>Email Address</h4>
-                                                <p>info@meranti.com</p>
-                                            </div>
-                                        </div>
+                                        <button type="submit" class="btn">
+                                            Kirim
+                                        </button>
                                     </div>
                                 </div>
-
-                                <div class="col-lg-7">
-                                    <div class="contact-form" data-aos="fade-up" data-aos-delay="300">
-                                        <h3>Kontak</h3>
-                                        <p>
-                                            Jika Anda memiliki pertanyaan atau membutuhkan bantuan terkait aplikasi
-                                            pengajuan,
-                                            silakan hubungi kami melalui informasi di bawah ini.
-                                        </p>
-
-                                        <form action="{{ route('contact.submit') }}" method="POST"
-                                            class="php-email-form" data-aos="fade-up" data-aos-delay="200">
-                                            @csrf
-                                            <div class="row gy-4">
-                                                <div class="col-md-6">
-                                                    <input type="text" name="name" class="form-control"
-                                                        placeholder="Nama" required="" />
-                                                </div>
-
-                                                <div class="col-md-6">
-                                                    <input type="email" class="form-control" name="email"
-                                                        placeholder="Email" required="" />
-                                                </div>
-
-                                                <div class="col-12">
-                                                    <input type="text" class="form-control" name="subject"
-                                                        placeholder="Subjek" required="" />
-                                                </div>
-
-                                                <div class="col-12">
-                                                    <textarea class="form-control" name="message" rows="6" placeholder="Pesan" required=""></textarea>
-                                                </div>
-
-                                                <div class="col-12 text-center">
-                                                    <div class="loading">Loading</div>
-                                                    <div class="error-message"></div>
-                                                    <div class="sent-message">
-                                                        Your message has been sent.
-                                                        Thank you!
-                                                    </div>
-
-                                                    <button type="submit" class="btn">
-                                                        Kirim
-                                                    </button>
-                                                </div>
-                                            </div>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
+                            </form>
                         </div>
-                    </section>
-                    <!-- /Contact Section -->
-                    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
-                    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-                    <script>
-                        // Initialize AOS
-                        AOS.init({
-                            duration: 1000,
-                            easing: 'ease-in-out',
-                            once: true,
-                            mirror: false
-                        });
-
-                        // Add interactive effects
-                        document.querySelectorAll('.document-card').forEach(card => {
-                            card.addEventListener('mouseenter', function() {
-                                this.style.transform = 'translateY(-10px) scale(1.02)';
-                            });
-
-                            card.addEventListener('mouseleave', function() {
-                                this.style.transform = 'translateY(0) scale(1)';
-                            });
-                        });
-
-                        // Download button click handler
-                        document.querySelectorAll('.download-btn').forEach(btn => {
-                            btn.addEventListener('click', function(e) {
-                                e.preventDefault();
-
-                                // Add loading state
-                                const originalText = this.innerHTML;
-                                this.innerHTML = '<i class="bi bi-download"></i> Mengunduh...';
-                                this.style.pointerEvents = 'none';
-
-                                // Simulate download process
-                                setTimeout(() => {
-                                    this.innerHTML = '<i class="bi bi-check-circle-fill"></i> Berhasil!';
-                                    this.style.background = 'linear-gradient(135deg, #48bb78, #38a169)';
-
-                                    setTimeout(() => {
-                                        this.innerHTML = originalText;
-                                        this.style.background =
-                                            'linear-gradient(135deg, var(--primary-color), var(--secondary-color))';
-                                        this.style.pointerEvents = 'auto';
-                                    }, 2000);
-                                }, 1500);
-                            });
-                        });
-                    </script>
-                    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
-                    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-                    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
-                    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-                    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
-                    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-                    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
-                    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-                    <script>
-                        // Initialize AOS
-                        AOS.init({
-                            duration: 1000,
-                            easing: 'ease-in-out',
-                            once: true,
-                            mirror: false
-                        });
-
-                        // Function to download PDF (you can modify this to point to actual PDF file)
-                        function downloadPDF() {
-                            // Replace with actual PDF URL
-                            alert(
-                                'Fitur download akan mengarahkan ke dokumen Perbup No. 32 Tahun 2022. Silakan hubungi admin untuk mendapatkan dokumen lengkap.'
-                            );
-                            // window.open('path/to/PERBUP_NO_32_TAHUN_2022.pdf', '_blank');
-                        }
-
-                        // Add smooth scrolling behavior
-                        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                            anchor.addEventListener('click', function(e) {
-                                e.preventDefault();
-                                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                                    behavior: 'smooth'
-                                });
-                            });
-                        });
-                        AOS.init({
-                            duration: 1000,
-                            easing: 'ease-in-out',
-                            once: true,
-                            mirror: false
-                        });
-                        AOS.init({
-                            duration: 800,
-                            easing: 'ease-in-out',
-                            once: true
-                        });
-
-                        // Slide Navigation
-                        let currentSlideIndex = 0;
-                        const totalSlides = 3;
-                        const newsCards = document.querySelectorAll('.news-card');
-                        const slideDots = document.querySelectorAll('.slide-dot');
-                        const currentSlideSpan = document.getElementById('currentSlide');
-                        const totalSlidesSpan = document.getElementById('totalSlides');
-                        const prevBtn = document.getElementById('prevBtn');
-                        const nextBtn = document.getElementById('nextBtn');
-
-                        // Set total slides
-                        totalSlidesSpan.textContent = totalSlides;
-
-                        function updateSlide(index) {
-                            // Update current slide index
-                            currentSlideIndex = index;
-
-                            // Update slide info
-                            currentSlideSpan.textContent = index + 1;
-
-                            // Update dots
-                            slideDots.forEach((dot, i) => {
-                                dot.classList.toggle('active', i === index);
-                            });
-
-                            // Add animation effect to cards
-                            newsCards.forEach((card, i) => {
-                                card.style.opacity = '0.5';
-                                card.style.transform = 'scale(0.95)';
-                            });
-
-                            setTimeout(() => {
-                                newsCards.forEach((card, i) => {
-                                    card.style.opacity = '1';
-                                    card.style.transform = 'scale(1)';
-                                });
-                            }, 200);
-                        }
-
-                        function nextSlide() {
-                            const nextIndex = (currentSlideIndex + 1) % totalSlides;
-                            updateSlide(nextIndex);
-                        }
-
-                        function prevSlide() {
-                            const prevIndex = (currentSlideIndex - 1 + totalSlides) % totalSlides;
-                            updateSlide(prevIndex);
-                        }
-
-                        // Event listeners
-                        nextBtn.addEventListener('click', nextSlide);
-                        prevBtn.addEventListener('click', prevSlide);
-
-                        slideDots.forEach((dot, index) => {
-                            dot.addEventListener('click', () => updateSlide(index));
-                        });
-
-                        // Auto slide (optional)
-                        setInterval(nextSlide, 5000);
-
-                        // Add hover effects
-                        newsCards.forEach(card => {
-                            card.addEventListener('mouseenter', () => {
-                                card.style.transform = 'translateY(-10px) scale(1.02)';
-                            });
-
-                            card.addEventListener('mouseleave', () => {
-                                card.style.transform = 'translateY(0) scale(1)';
-                            });
-                        });
-
-                        // Smooth transitions for all cards
-                        newsCards.forEach(card => {
-                            card.style.transition = 'all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1)';
-                        });
-                        AOS.init({
-                            duration: 1000,
-                            easing: 'ease-in-out',
-                            once: true,
-                            mirror: false
-                        });
-
-                        // Smooth scrolling for tab transitions
-                        document.querySelectorAll('[data-bs-toggle="tab"]').forEach(tab => {
-                            tab.addEventListener('shown.bs.tab', function(e) {
-                                e.target.scrollIntoView({
-                                    behavior: 'smooth',
-                                    block: 'start'
-                                });
-                            });
-                        });
-                    </script>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- /Contact Section -->
     </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 1000,
+            easing: 'ease-in-out',
+            once: true,
+            mirror: false
+        });
+
+        // Add interactive effects
+        document.querySelectorAll('.document-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-10px) scale(1.02)';
+            });
+
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+
+        // Download button click handler
+        document.querySelectorAll('.download-btn').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                e.preventDefault();
+
+                // Add loading state
+                const originalText = this.innerHTML;
+                this.innerHTML = '<i class="bi bi-download"></i> Mengunduh...';
+                this.style.pointerEvents = 'none';
+
+                // Simulate download process
+                setTimeout(() => {
+                    this.innerHTML = '<i class="bi bi-check-circle-fill"></i> Berhasil!';
+                    this.style.background = 'linear-gradient(135deg, #48bb78, #38a169)';
+
+                    setTimeout(() => {
+                        this.innerHTML = originalText;
+                        this.style.background =
+                            'linear-gradient(135deg, var(--primary-color), var(--secondary-color))';
+                        this.style.pointerEvents = 'auto';
+                    }, 2000);
+                }, 1500);
+            });
+        });
+    </script>
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 1000,
+            easing: 'ease-in-out',
+            once: true,
+            mirror: false
+        });
+
+        // Function to download PDF (you can modify this to point to actual PDF file)
+        function downloadPDF() {
+            // Replace with actual PDF URL
+            alert(
+                'Fitur download akan mengarahkan ke dokumen Perbup No. 32 Tahun 2022. Silakan hubungi admin untuk mendapatkan dokumen lengkap.'
+            );
+            // window.open('path/to/PERBUP_NO_32_TAHUN_2022.pdf', '_blank');
+        }
+
+        // Add smooth scrolling behavior
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        AOS.init({
+            duration: 1000,
+            easing: 'ease-in-out',
+            once: true,
+            mirror: false
+        });
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+
+        // Slide Navigation
+        let currentSlideIndex = 0;
+        const totalSlides = 3;
+        const newsCards = document.querySelectorAll('.news-card');
+        const slideDots = document.querySelectorAll('.slide-dot');
+        const currentSlideSpan = document.getElementById('currentSlide');
+        const totalSlidesSpan = document.getElementById('totalSlides');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+
+        // Set total slides
+        totalSlidesSpan.textContent = totalSlides;
+
+        function updateSlide(index) {
+            // Update current slide index
+            currentSlideIndex = index;
+
+            // Update slide info
+            currentSlideSpan.textContent = index + 1;
+
+            // Update dots
+            slideDots.forEach((dot, i) => {
+                dot.classList.toggle('active', i === index);
+            });
+
+            // Add animation effect to cards
+            newsCards.forEach((card, i) => {
+                card.style.opacity = '0.5';
+                card.style.transform = 'scale(0.95)';
+            });
+
+            setTimeout(() => {
+                newsCards.forEach((card, i) => {
+                    card.style.opacity = '1';
+                    card.style.transform = 'scale(1)';
+                });
+            }, 200);
+        }
+
+        function nextSlide() {
+            const nextIndex = (currentSlideIndex + 1) % totalSlides;
+            updateSlide(nextIndex);
+        }
+
+        function prevSlide() {
+            const prevIndex = (currentSlideIndex - 1 + totalSlides) % totalSlides;
+            updateSlide(prevIndex);
+        }
+
+        // Event listeners
+        nextBtn.addEventListener('click', nextSlide);
+        prevBtn.addEventListener('click', prevSlide);
+
+        slideDots.forEach((dot, index) => {
+            dot.addEventListener('click', () => updateSlide(index));
+        });
+
+        // Auto slide (optional)
+        setInterval(nextSlide, 5000);
+
+        // Add hover effects
+        newsCards.forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.transform = 'translateY(-10px) scale(1.02)';
+            });
+
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+
+        // Smooth transitions for all cards
+        newsCards.forEach(card => {
+            card.style.transition = 'all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1)';
+        });
+        AOS.init({
+            duration: 1000,
+            easing: 'ease-in-out',
+            once: true,
+            mirror: false
+        });
+
+        // Smooth scrolling for tab transitions
+        document.querySelectorAll('[data-bs-toggle="tab"]').forEach(tab => {
+            tab.addEventListener('shown.bs.tab', function(e) {
+                e.target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            });
+        });
+    </script>
 @endsection

@@ -6,6 +6,7 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\Admin\ValidateController;
 use App\Http\Controllers\User\DashboardController;
 use App\Http\Controllers\User\SubmissionController;
+use App\Http\Controllers\Admin\SubmissionPeriodController;
 use App\Http\Controllers\Admin\ContactController as AdminContactController;
 use App\Http\Controllers\Admin\DashboardController as AdminDashboardController;
 
@@ -47,5 +48,8 @@ Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () 
     Route::patch('validate/{submission}/accept', [ValidateController::class, 'accept'])->name('validate.accept');
     Route::patch('validate/{submission}/reject', [ValidateController::class, 'reject'])->name('validate.reject');
     Route::patch('validate/{submission}/revise', [ValidateController::class, 'revise'])->name('validate.revise');
+    Route::get('periods', [SubmissionPeriodController::class, 'index'])->name('periods.index');
+    Route::post('periods', [SubmissionPeriodController::class, 'store'])->name('periods.store');
+    Route::put('periods/{period}', [SubmissionPeriodController::class, 'update'])->name('periods.update');
     Route::resource('contact', AdminContactController::class);
 });

@@ -6,6 +6,7 @@ use App\Models\User;
 use App\Models\Submission;
 use App\Models\Notification;
 use Illuminate\Http\Request;
+use App\Models\SubmissionPeriod;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
@@ -41,11 +42,20 @@ class SubmissionController extends Controller
 
     public function create()
     {
+        if (!SubmissionPeriod::isActive()) {
+            return redirect()->route('user.submission.index')
+                ->with('error', 'Pendaftaran hibah sudah ditutup.');
+        }
+
         return view('user.submission.create');
     }
 
     public function store(Request $request)
     {
+        if (!SubmissionPeriod::isActive()) {
+            return back()->with('error', 'Pendaftaran hibah sudah ditutup.');
+        }
+
         $request->validate([
             'title' => 'required|string|max:255',
             'name_institution' => 'required|string|max:255',
@@ -123,6 +133,11 @@ class SubmissionController extends Controller
 
     public function edit(Submission $submission)
     {
+        if (!SubmissionPeriod::isActive()) {
+            return redirect()->route('user.submission.index')
+                ->with('error', 'Periode pengajuan telah berakhir. Tidak dapat mengedit.');
+        }
+
         return view('user.submission.edit', compact('submission'));
     }
 
