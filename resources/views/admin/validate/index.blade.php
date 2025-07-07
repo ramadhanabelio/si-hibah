@@ -21,7 +21,7 @@
                                     <div class="alert alert-success text-center">{{ session('success') }}</div>
                                 @endif
 
-                                <form method="GET" class="mb-4">
+                                <!-- <form method="GET" class="mb-4">
                                     <div class="row">
                                         <div class="col-md-3">
                                             <select name="subdistrict" class="form-control form-control-sm">
@@ -71,7 +71,7 @@
                                             <button type="submit" class="btn btn-custom btn-block btn-sm">Filter</button>
                                         </div>
                                     </div>
-                                </form>
+                                </form> -->
 
                                 <table class="table table-hover custom-table">
                                     <thead>

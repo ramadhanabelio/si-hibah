@@ -73,60 +73,6 @@
     @yield('content')
 
     <footer id="footer" class="footer">
-        <div class="container footer-top">
-            <div class="row gy-4">
-                <div class="col-lg-4 col-md-6 footer-about">
-                    <a href="/" class="logo d-flex align-items-center">
-                        <span class="sitename">SI-HIBAH</span>
-                    </a>
-                    <div class="footer-contact pt-3">
-                        <p>Kepulauan Meranti</p>
-                        <p>Meranti, Selatpanjang</p>
-                        <p class="mt-3">
-                            <strong>Phone:</strong>
-                            <span>+1 5589 55488 55</span>
-                        </p>
-                        <p>
-                            <strong>Email:</strong>
-                            <span>info@meranti.com</span>
-                        </p>
-                    </div>
-                    <div class="social-links d-flex mt-4">
-                        <a href=""><i class="bi bi-twitter-x"></i></a>
-                        <a href=""><i class="bi bi-facebook"></i></a>
-                        <a href=""><i class="bi bi-instagram"></i></a>
-                        <a href=""><i class="bi bi-linkedin"></i></a>
-                    </div>
-                </div>
-
-                <div class="col-lg-2 col-md-3 footer-links">
-                    <h4>Menu</h4>
-                    <ul>
-                        <li><a href="#hero">Beranda</a></li>
-                        <li><a href="#about">Tentang Kami</a></li>
-                        <li><a href="#features">Keunggulan</a></li>
-                        <li><a href="#features-cards">Alur</a></li>
-                        <li><a href="#services">Kategori</a></li>
-                        <li><a href="#contact">Kontak</a></li>
-                    </ul>
-                </div>
-
-                <div class="col-lg-2 col-md-3 footer-links">
-                    <h4>Kategori</h4>
-                    <ul>
-                        <li><a href="#">Pembangunan Sumur Bor</a></li>
-                        <li><a href="#">Bantuan Usaha Mikro</a></li>
-                        <li><a href="#">Pengadaan Buku Perpustakaan</a></li>
-                        <li><a href="#">Pembangunan Masjid</a></li>
-                    </ul>
-                </div>
-
-                <div class="col-lg-4 col-md-6 text-center footer-links">
-                    <h4>Kepulauan Meranti</h4>
-                    <img src="{{ asset('img/logo.png') }}" alt="Lambang Meranti" width="35%">
-                </div>
-            </div>
-        </div>
 
         <div class="container copyright text-center mt-4">
             <p>

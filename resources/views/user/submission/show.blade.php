@@ -162,11 +162,6 @@
                                 </div>
                             </div>
                         </div>
-
-                        <div class="text-center mb-3">
-                            <a href="{{ route('user.submission.index') }}" class="btn btn-success px-4">Cek Verifikasi
-                                Pengajuan</a>
-                        </div>
                     </div>
                 </div>
             </div>

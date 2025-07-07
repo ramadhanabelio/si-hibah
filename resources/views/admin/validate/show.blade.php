@@ -192,10 +192,6 @@
                                 </div>
                             </div>
                         </form>
-
-                        <div class="text-center mt-4">
-                            <a href="{{ route('admin.validate.index') }}" class="btn btn-secondary">Kembali</a>
-                        </div>
                     </div>
                 </div>
             </div>

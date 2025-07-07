@@ -29,7 +29,6 @@
                                     <div class="card-title">Pendaftaran Dana Hibah Baru</div>
                                 </div>
                                 <div class="card-body">
-                                    <p>Deadline Pendaftaran Hibah APBD : 30 Juni, Deadline Perubahan APBD : 30 April</p>
 
                                     <div class="form-group">
                                         <label for="title">Judul</label>

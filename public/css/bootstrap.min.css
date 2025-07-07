@@ -1777,8 +1777,8 @@ pre code {
     border-color: #32383e;
 }
 .table .thead-light th {
-    color: #495057;
-    background-color: #e9ecef;
+    color: #ffffff;
+    background-color: #316d62;
     border-color: #dee2e6;
 }
 .table-dark {
@@ -4524,7 +4524,7 @@ tbody.collapse.show {
 }
 .badge-secondary {
     color: #fff;
-    background-color: #6c757d;
+    background-color: #0ebdd9;
 }
 .badge-secondary[href]:focus,
 .badge-secondary[href]:hover {

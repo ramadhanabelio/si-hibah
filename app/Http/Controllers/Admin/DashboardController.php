@@ -13,6 +13,6 @@ class DashboardController extends Controller
         $totalContact = Contact::count();
         $totalSubmission = Submission::count();
 
-        return view('admin.dashboard', compact('totalContact', 'totalSubmission'));
+        return view('admin.dashboard', compact('totalContact', 'totalSubmission',));
     }
 }

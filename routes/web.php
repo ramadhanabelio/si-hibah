@@ -33,14 +33,14 @@ Route::get('login', [AuthController::class, 'showLoginForm'])->name('login.form'
 Route::post('login', [AuthController::class, 'login'])->name('login');
 Route::post('logout', [AuthController::class, 'logout'])->name('logout');
 
-Route::middleware(['auth'])->prefix('user')->name('user.')->group(function () {
+Route::middleware(['auth', 'roleCheck:user'])->prefix('user')->name('user.')->group(function () {
     Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
     Route::resource('submission', SubmissionController::class);
     Route::get('submission/{submission}/history', [SubmissionController::class, 'history'])->name('submission.history');
     Route::get('submissions/revisi-ditolak', [SubmissionController::class, 'indexRe'])->name('submission.indexRe');
 });
 
-Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () {
+Route::middleware(['auth','roleCheck:admin', ])->prefix('admin')->name('admin.')->group(function () {
     Route::get('dashboard', [AdminDashboardController::class, 'index'])->name('dashboard');
     Route::resource('validate', ValidateController::class);
     Route::post('validate/{submission}/store-validation', [ValidateController::class, 'store'])->name('validate.store');

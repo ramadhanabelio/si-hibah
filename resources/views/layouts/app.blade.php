@@ -77,19 +77,18 @@
                         <li class="nav-item dropdown">
                             <a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#"
                                 aria-expanded="false">
-                                <img src="{{ asset('img/profile.png') }}" alt="user-img" width="36"
+                                <img src="{{ asset('img/profil.png') }}" alt="user-img" width="36"
                                     class="img-circle">
                                 <span>{{ Auth::guard('web')->user()->name }}</span>
                             </a>
                             <ul class="dropdown-menu dropdown-user">
                                 <li>
                                     <div class="user-box">
-                                        <div class="u-img"><img src="{{ asset('img/profile.png') }}" alt="user">
+                                        <div class="u-img"><img src="{{ asset('img/profil.png') }}" alt="user">
                                         </div>
                                         <div class="u-text">
                                             <h4>{{ Auth::guard('web')->user()->username }}</h4>
                                             <p class="text-muted">{{ Auth::guard('web')->user()->email }}</p>
-                                            <a href="#" class="btn btn-rounded btn-info btn-sm">Profil</a>
                                         </div>
                                     </div>
                                 </li>
@@ -131,7 +130,7 @@
                         <li class="nav-item {{ request()->routeIs('admin.periods.*') ? 'active' : '' }}">
                             <a href="{{ route('admin.periods.index') }}">
                                 <i class="la la-file"></i>
-                                <p>Pengajuan</p>
+                                <p>Periode pendaftaran</p>
                             </a>
                         </li>
                         <li class="nav-item {{ request()->routeIs('admin.contact.*') ? 'active' : '' }}">

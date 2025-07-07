@@ -1294,7 +1294,7 @@
                         <div class="hero-content" data-aos="fade-up" data-aos-delay="200">
                             <div class="company-badge mb-4">
                                 <i class="bi bi-gear-fill me-2"></i>
-                                Kesejahteraan Rakyat
+                                Pemerintah Daerah
                             </div>
 
                             <h1 class="mb-4">
@@ -1312,11 +1312,6 @@
                             <div class="hero-buttons">
                                 <a href="{{ route('login.form') }}" class="btn btn-primary me-0 me-sm-2 mx-1">Ajukan
                                     Sekarang</a>
-                                <a href="https://www.youtube.com/watch?v=Y7f98aduVJ8"
-                                    class="btn btn-link mt-2 mt-sm-0 glightbox">
-                                    <i class="bi bi-play-circle me-1"></i>
-                                    Tutorial Pengajuan
-                                </a>
                             </div>
                         </div>
                     </div>
@@ -1397,8 +1392,7 @@
                     <div class="col-xl-6" data-aos="fade-up" data-aos-delay="300">
                         <div class="image-wrapper">
                             <div class="images position-relative" data-aos="zoom-out" data-aos-delay="400">
-                                <img src="img/about-5.webp" alt="Business Meeting" class="img-fluid main-image rounded-4" />
-                                <img src="img/about-2.webp" alt="Team Discussion" class="img-fluid small-image rounded-4" />
+                                <img src="img/bupati.jpg" alt="Business Meeting" class="img-fluid main-image rounded-4" />
                             </div>
                         </div>
                     </div>
@@ -1415,7 +1409,7 @@
         <!-- Section Title -->
         <section class="hero-section">
             <div class="container" data-aos="fade-up">
-                <h1><i class="bi bi-mosque"></i> Hibah Keagamaan</h1>
+                <h1><i class="bi bi-mosque"></i>Hibah</h1>
                 <p>Panduan Lengkap Pengajuan Hibah untuk Masjid, Mushola, dan Kegiatan Keagamaan<br>
                     Kabupaten Kepulauan Meranti</p>
             </div>
@@ -1442,11 +1436,6 @@
                                 <h5><i class="bi bi-diagram-3"></i> Tahap Seleksi</h5>
                             </a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" data-bs-toggle="tab" data-bs-target="#pertanggungjawaban">
-                                <h5><i class="bi bi-clipboard-check"></i> Pertanggungjawaban</h5>
-                            </a>
-                        </li>
                     </ul>
                 </div>
 
@@ -1470,28 +1459,6 @@
                                         masjid/mushola, dan lembaga keagamaan yang memenuhi syarat.</p>
                                     <p class="mb-0"><strong>Pengelola:</strong> Sekretariat Daerah Kabupaten
                                         Kepulauan Meranti</p>
-                                </div>
-
-                                <div class="card">
-                                    <div class="card-header">
-                                        <h5><i class="bi bi-calendar-event"></i> Jadwal Pengajuan</h5>
-                                    </div>
-                                    <div class="card-body">
-                                        <div class="checklist-item">
-                                            <i class="bi bi-calendar-check"></i>
-                                            <div>
-                                                <strong>APBD Tahun Berikutnya:</strong><br>
-                                                Usulan disampaikan paling lambat bulan Juni
-                                            </div>
-                                        </div>
-                                        <div class="checklist-item">
-                                            <i class="bi bi-calendar-plus"></i>
-                                            <div>
-                                                <strong>Perubahan APBD:</strong><br>
-                                                Usulan disampaikan paling lambat bulan April tahun berkenaan
-                                            </div>
-                                        </div>
-                                    </div>
                                 </div>
 
                                 <div class="card">
@@ -1545,8 +1512,6 @@
                                 <ul class="requirement-list">
                                     <li><i class="bi bi-dot"></i> Proposal Kegiatan/Pembangunan</li>
                                     <li><i class="bi bi-dot"></i> Rencana Anggaran Biaya (RAB)</li>
-                                    <li><i class="bi bi-dot"></i> Surat Permohonan resmi</li>
-                                    <li><i class="bi bi-dot"></i> Surat Keterangan dari Kelurahan/Desa</li>
                                 </ul>
                             </div>
 
@@ -1555,8 +1520,6 @@
                                 <ul class="requirement-list">
                                     <li><i class="bi bi-dot"></i> Foto kondisi saat ini (untuk renovasi/pembangunan)
                                     </li>
-                                    <li><i class="bi bi-dot"></i> Foto kegiatan sebelumnya (untuk kegiatan rutin)</li>
-                                    <li><i class="bi bi-dot"></i> Sketsa/denah bangunan (jika pembangunan)</li>
                                 </ul>
                             </div>
 
@@ -1684,7 +1647,7 @@
                     </div>
 
                     <!-- Pertanggungjawaban Tab -->
-                    <div class="tab-pane fade" id="pertanggungjawaban">
+                    <!-- <div class="tab-pane fade" id="pertanggungjawaban">
                         <h3 class="section-title">Kewajiban Pertanggungjawaban</h3>
 
                         <div class="row">
@@ -1770,17 +1733,17 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> -->
 
                 <!-- Download Section -->
                 <div class="text-center mt-5" data-aos="fade-up" data-aos-delay="300">
                     <div class="card" style="max-width: 3000px; margin: 0 auto;">
                         <div class="card-body">
                             <h5 class="card-title"><i class="bi bi-download"></i> Unduh Dokumen</h5>
-                            <p class="card-text text-muted">Dokumen lengkap Peraturan Bupati tentang Pedoman Hibah dan
+                            <p class="card-text text-muted">Dokumen Peraturan Bupati No. 32 Tahun 2022 tentang Pedoman Hibah dan
                                 Bantuan Sosial</p>
                             <a href="{{ asset('docs/perbup.pdf') }}" download class="btn btn-primary btn-lg">
-                                <i class="bi bi-file-pdf ms-2"></i> Download Perbup No. 32 Tahun 2022
+                                <i class="bi bi-file-pdf ms-2"></i> Download
                             </a>
                         </div>
                     </div>
@@ -1788,50 +1751,6 @@
             </div>
         </section>
         <!-- /Features Section -->
-
-        <!-- Stats Section -->
-        <section id="stats" class="stats section">
-            <div class="container" data-aos="fade-up" data-aos-delay="100">
-                <div class="row gy-4">
-                    <div class="col-lg-3 col-md-6">
-                        <div class="stats-item text-center w-100 h-100">
-                            <span data-purecounter-start="0" data-purecounter-end="232" data-purecounter-duration="1"
-                                class="purecounter"></span>
-                            <p>Proposal diproses</p>
-                        </div>
-                    </div>
-                    <!-- End Stats Item -->
-
-                    <div class="col-lg-3 col-md-6">
-                        <div class="stats-item text-center w-100 h-100">
-                            <span data-purecounter-start="0" data-purecounter-end="521" data-purecounter-duration="1"
-                                class="purecounter"></span>
-                            <p>Proposal direvisi</p>
-                        </div>
-                    </div>
-                    <!-- End Stats Item -->
-
-                    <div class="col-lg-3 col-md-6">
-                        <div class="stats-item text-center w-100 h-100">
-                            <span data-purecounter-start="0" data-purecounter-end="1453" data-purecounter-duration="1"
-                                class="purecounter"></span>
-                            <p>Proposal disetujui</p>
-                        </div>
-                    </div>
-                    <!-- End Stats Item -->
-
-                    <div class="col-lg-3 col-md-6">
-                        <div class="stats-item text-center w-100 h-100">
-                            <span data-purecounter-start="0" data-purecounter-end="32" data-purecounter-duration="1"
-                                class="purecounter"></span>
-                            <p>Proposal ditolak</p>
-                        </div>
-                    </div>
-                    <!-- End Stats Item -->
-                </div>
-            </div>
-        </section>
-        <!-- /Stats Section -->
 
         <!-- Services Section -->
         <section id="services" class="services section">
@@ -1855,9 +1774,6 @@
                         yang bermanfaat bagi masyarakat. Kami mengundang seluruh organisasi, lembaga, dan komunitas yang
                         memenuhi syarat untuk mengajukan proposal hibah sesuai dengan kategori yang tersedia.
                     </div>
-                    <span class="date-badge">
-                        <i class="bi bi-calendar-event"></i> Diumumkan: 21 Juni 2025
-                    </span>
                 </div>
 
                 <!-- Schedule Cards -->
@@ -1875,7 +1791,6 @@
                                 <div class="schedule-title">Pembukaan Pendaftaran</div>
                                 <div class="schedule-date">
                                     {{ \Carbon\Carbon::parse($activePeriod->start_date)->translatedFormat('d F Y') }}</div>
-                                <div class="schedule-time">Pukul 08:00 WIB</div>
                                 <p class="mt-3 text-muted">
                                     Pendaftaran dan pengajuan proposal hibah dibuka untuk semua kategori yang tersedia.
                                 </p>
@@ -1890,7 +1805,6 @@
                                 <div class="schedule-title">Penutupan Pengajuan</div>
                                 <div class="schedule-date">
                                     {{ \Carbon\Carbon::parse($activePeriod->end_date)->translatedFormat('d F Y') }}</div>
-                                <div class="schedule-time">Pukul 17:00 WIB</div>
                                 <p class="mt-3 text-muted">
                                     Batas akhir pengajuan proposal hibah. Tidak ada perpanjangan waktu.
                                 </p>
@@ -2030,29 +1944,6 @@
 
                 <div class="documents-grid">
                     <!-- Surat Permohonan Walikota -->
-                    <div class="document-card" data-aos="fade-up" data-aos-delay="100">
-                        <div class="document-icon">
-                            <div class="clipboard">
-                                <div class="paper">
-                                    <i class="bi bi-person-badge paper-icon"></i>
-                                    <div class="paper-text">
-                                        Yth.<br>
-                                        Bapak<br>
-                                        Walikota
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <h3 class="document-title">Surat Permohonan Walikota</h3>
-                        <p class="document-description">
-                            Template surat permohonan hibah yang ditujukan kepada Walikota sebagai dokumen
-                            formal pengajuan
-                        </p>
-                        <a href="{{ asset('docs/perbup.pdf') }}" class="download-btn">
-                            <i class="bi bi-download"></i>
-                            Download Template
-                        </a>
-                    </div>
 
                     <!-- Proposal -->
                     <div class="document-card" data-aos="fade-up" data-aos-delay="200">
@@ -2072,18 +1963,17 @@
                             Format proposal kegiatan yang berisi latar belakang, tujuan, rencana kegiatan, dan
                             manfaat program
                         </p>
-                        <a href="{{ asset('docs/proposal.pdf') }}" class="download-btn">
-                            <i class="bi bi-download"></i>
-                            Download Template
-                        </a>
+                        <a href="{{ asset('docs/proposal.pdf') }}" download class="btn btn-primary btn-lg">
+                                <i class="bi bi-file-pdf ms-2"></i> Download 
+                            </a>
                     </div>
 
                     <!-- RAB -->
-                    <div class="document-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="document-card" data-aos="fade-up" data-aos-delay="200">
                         <div class="document-icon">
                             <div class="clipboard">
                                 <div class="paper">
-                                    <i class="bi bi-calculator paper-icon"></i>
+                                    <i class="bi bi-file-earmark-text paper-icon"></i>
                                     <div class="paper-text">
                                         RAB
                                     </div>
@@ -2092,46 +1982,41 @@
                         </div>
                         <h3 class="document-title">RAB</h3>
                         <p class="document-description">
-                            Rencana Anggaran Biaya yang detail dan terperinci untuk setiap item kegiatan yang
-                            akan dilaksanakan
+                            rab
                         </p>
-                        <a href="{{ asset('docs/perbup.pdf') }}" class="download-btn">
-                            <i class="bi bi-download"></i>
-                            Download Template
-                        </a>
+                        <a href="{{ asset('docs/rab.pdf') }}" download class="btn btn-primary btn-lg">
+                                <i class="bi bi-file-pdf ms-2"></i> Download 
+                            </a>
+                        
                     </div>
 
-                    <!-- Domisili Dari Lurah -->
-                    <div class="document-card" data-aos="fade-up" data-aos-delay="400">
+                    <!-- NPWP -->
+                    <div class="document-card" data-aos="fade-up" data-aos-delay="200">
                         <div class="document-icon">
                             <div class="clipboard">
                                 <div class="paper">
-                                    <i class="bi bi-geo-alt paper-icon"></i>
+                                    <i class="bi bi-file-earmark-text paper-icon"></i>
                                     <div class="paper-text">
-                                        DOMISILI<br>
-                                        DARI<br>
-                                        LURAH
+                                        NPWP
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <h3 class="document-title">Domisili Dari Lurah</h3>
+                        <h3 class="document-title">NPWP</h3>
                         <p class="document-description">
-                            Surat keterangan domisili dari Lurah setempat sebagai bukti keberadaan organisasi di
-                            wilayah tersebut
+                           NPWP
                         </p>
-                        <a href="{{ asset('docs/perbup.pdf') }}" class="download-btn">
-                            <i class="bi bi-download"></i>
-                            Download Template
-                        </a>
+                        <a href="{{ asset('docs/npwp.pdf') }}" download class="btn btn-primary btn-lg">
+                                <i class="bi bi-file-pdf ms-2"></i> Download 
+                            </a>
                     </div>
 
                     <!-- Surat Keterangan -->
-                    <div class="document-card" data-aos="fade-up" data-aos-delay="500">
+                    <div class="document-card" data-aos="fade-up" data-aos-delay="200">
                         <div class="document-icon">
                             <div class="clipboard">
                                 <div class="paper">
-                                    <i class="bi bi-file-earmark-check paper-icon"></i>
+                                    <i class="bi bi-file-earmark-text paper-icon"></i>
                                     <div class="paper-text">
                                         Akte Pendirian<br>
                                         Kementerian<br>
@@ -2145,36 +2030,9 @@
                             Akte Pendirian dari Kementerian terkait atau instansi berwenang sebagai legalitas
                             organisasi
                         </p>
-                        <a href="{{ asset('docs/akte-pendirian.pdf') }}" class="download-btn">
-                            <i class="bi bi-download"></i>
-                            Download Template
-                        </a>
-                    </div>
-
-                    <!-- Contoh File KTP -->
-                    <div class="document-card" data-aos="fade-up" data-aos-delay="600">
-                        <div class="document-icon">
-                            <div class="clipboard">
-                                <div class="paper">
-                                    <i class="bi bi-credit-card paper-icon"></i>
-                                    <div class="paper-text">
-                                        KTP<br>
-                                        Ketua<br>
-                                        Sekretaris<br>
-                                        Bendahara
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <h3 class="document-title">Contoh File KTP</h3>
-                        <p class="document-description">
-                            Template pengumpulan KTP Ketua, Sekretaris, dan Bendahara organisasi sebagai
-                            identitas pengurus
-                        </p>
-                        <a href="{{ asset('docs/perbup.pdf') }}" class="download-btn">
-                            <i class="bi bi-download"></i>
-                            Download Template
-                        </a>
+                        <a href="{{ asset('docs/akte-pendirian.pdf') }}" download class="btn btn-primary btn-lg">
+                                <i class="bi bi-file-pdf ms-2"></i> Download 
+                            </a>
                     </div>
                 </div>
 
@@ -2184,7 +2042,7 @@
                     <ul class="info-list">
                         <li>
                             <i class="bi bi-check-circle-fill"></i>
-                            <span>Semua dokumen harus dalam format PDF dengan ukuran maksimal 5MB per
+                            <span>Semua dokumen harus dalam format PDF dengan ukuran maksimal 2 Mb per
                                 file</span>
                         </li>
                         <li>
@@ -2296,7 +2154,7 @@
                                     </div>
 
                                     <div class="col-12">
-                                        <input type="text" class="form-control" name="subject" placeholder="Subjek"
+                                        <input type="text" class="form-control" name="subject" placeholder="Judul"
                                             required="" />
                                     </div>
 
